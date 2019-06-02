@@ -1,0 +1,22 @@
+.page-footer{
+	background-color: #00adb5;
+}
+
+#logo-escom, #logo-c-cero{
+	padding-top: 30px;
+}
+
+@media only screen and (max-width: 992px){
+	#logo-escom, #logo-c-cero{
+		height: 60%;
+		width: 60%;
+	}
+}
+
+
+@media only screen and (max-width: 600px){
+	#logo-escom, #logo-c-cero{
+		height: 60%;
+		width: 60%;
+	}
+}

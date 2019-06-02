@@ -1,0 +1,13 @@
+nav{
+	background-color: #eeeeee !important;
+}
+
+#logo{
+	height: 62px;
+	width: 146px;
+}
+
+.nav-fas{
+	margin: 0px 30px;
+	color: #00adb5;
+}
