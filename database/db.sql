@@ -46,7 +46,7 @@ create table GestAExpP
 	idprof int not null,
     goe nvarchar(1) not null,
     actividad nvarchar(30) not null,   
-    institucion nvarchar(30) not null,
+    institucion nvarchar(40) not null,
     de date not null,
     a date not null,
     foreign key(idprof) references Datos(idprof) on delete cascade on update cascade
@@ -74,7 +74,7 @@ create table ExpIngMemb
 
 create table LogrosPrem
 (
-    idprod int not null auto_increment primary key,
+    idlp int not null auto_increment primary key,
 	idprof int not null,    
     lop nvarchar(1) not null,
     des tinytext not null,
@@ -83,7 +83,7 @@ create table LogrosPrem
 
 create table PartPE
 (
-    idprod int not null auto_increment primary key,
+    idpe int not null auto_increment primary key,
 	idprof int not null,    
     texto tinytext not null,
     foreign key(idprof) references Datos(idprof) on delete cascade on update cascade
