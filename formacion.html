@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Registro</title>
+	<title>Formación</title>
 
 	<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
 	<meta name="description" content="">
@@ -25,13 +25,12 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<link rel="shortcut icon" type="image/x-icon" href="images/logo_fondoGris.png" />
-
-	<link href="css/registro.css" rel="stylesheet">
+	<link href="css/formacion.css" rel="stylesheet">
 	<link href="css/nvBar.css" rel="stylesheet">
 	<link href="css/foot.css" rel="stylesheet">
 
-	<script type="text/javascript" src="js/registro.js"></script>
+	<script type="text/javascript" src="js/formacion.js"></script>
+	<script type="text/javascript" src="js/nvBar.js"></script>
 
 </head>
 
@@ -43,65 +42,48 @@
 		<div class = "row">
 				<nav>
 				    <div class="nav-wrapper">
+
+				      <a href="#" data-target="sidenav-bars" class="sidenav-trigger">
+				      	<i class="fas nav-fas fa-bars"></i>
+				      </a>
+
+				      <ul class="left hide-on-med-and-down" id="home">
+			      		<li><a href="#"><i class="fas nav-fas fa-home"></i></a></li>
+			      	  </ul>
+
+			      	  <ul class="right hide-on-med-and-down">
+			      		<li><a href="#" id="btn-user-nav" data-target="sidenav-user" class="sidenav-trigger"><i class="fas nav-fas fa-user"></i></a></li>
+			      	  </ul>
+
 				      <a href="login.html" class="brand-logo center">
 				      	<img src="https://drive.google.com/uc?id=1lM9nUqmsL9CI4pGcCSx2NM3H3TOdSuT-" class = "responsive-img" id = "logo">
 				      </a>
+
+			      	  <ul class="sidenav" id="sidenav-bars">
+			      	  	<li><a class = "blue-text"><i class="fas nav-fas fa-home blue-text"></i>Inicio</a></li>
+				      	<li><a class = "blue-text"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Perfil</a></li>
+			      		<li><a href="#" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesión</a></li>
+			      	  </ul>
+
+			      	  <ul class="sidenav" id="sidenav-user">
+				      	<li><a class = "blue-text" id="btn-verPerfil-s"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Perfil</a></li>
+			      		<li><a href="#" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesión</a></li>
+			      	  </ul>
+
 				    </div>
 				</nav>
 			</div>
 
 		<div class="container">
 			<div class = "row">
-				<div class = "col s12 m12 l12 center-align">
+				<div class = "col s12 m12 l12 left-align">
 					<h1>
-						¡Regístrate!
+						Formación Académica
 					</h1>
 				</div>
 			</div>
 
 			<form action="?acc=1" method="POST" id="formRE">
-
-				<div class="row">
-					<div class="col s12 m10 l8 offset-l2 offset-m1">
-						<div class="input-field">
-		                  <i class="prefix fas fa-user"></i>
-		                  <input id="nombre" name="nombre" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
-		                  <label for="nombre">Nombre(s)</label>
-		                </div>
-					</div>
-
-					<div class="col s6 m5 l4 offset-l2 offset-m1">
-						<div class="input-field">
-		                  <input id="APat" name="APat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
-		                  <label for="APat">Apellido Paterno</label>
-		                </div>
-					</div>
-
-					<div class="col s6 m5 l4">
-						<div class="input-field">
-		                  <input id="AMat" name="AMat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
-		                  <label for="AMat">Apellido Materno</label>
-		                </div>
-					</div>
-				</div>
-
-				<div class = "row">
-					<div class="col s12 m10 l8 offset-l2 offset-m1">
-		        		<div class="input-field">
-		        		  <i class="prefix fas fa-calendar-alt"></i>
-		        		  <input id="fecha" name="fecha" type="text" class="datepicker" data-validetta="required">
-		                  <label for="fecha">Fecha de Nacimiento</label>
-		                </div>
-		        	</div>
-
-		        	<div class="col s12 m10 l8 offset-l2 offset-m1">
-		        		<div class="input-field">
-		        		  <i class="prefix fas fa-envelope"></i>
-		                  <input id="email" name="email" type="text" class="validate counter" data-length="40" data-validetta="required,maxLength[40],email">
-		                  <label for="email">Correo Electrónico</label>
-		                </div>
-		        	</div>
-		        </div>
 
 				<div class="row">
 				  <div class="input-field col s12 m8 l6 offset-l3 offset-m2">
@@ -117,27 +99,9 @@
 					
 				</div>
 
-				<div class = "row">
-	            	<div class="col s12 m10 l8 offset-l2 offset-m1">
-	            		<div class="input-field">
-	            		  <i class="prefix fas fa-lock"></i>
-	                      <input id="contra" name="contra" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16]">
-	                      <label for="contra">Contraseña</label>
-	                    </div>
-	            	</div>
-
-	            	<div class="col s12 m10 l8 offset-l2 offset-m1">
-	            		<div class="input-field">
-	            		  <i class="prefix fas fa-lock"></i>	
-	                      <input id="contra2" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16],equalTo[contra]">
-	                      <label for="contra2">Confirma la Contraseña</label>
-	                    </div>
-	            	</div>
-	            </div>
-
 				<div class="row">
 					<div class="col s12 m12 l12 center-align">
-	            		<button class="btn-large waves-effect waves-light" type="submit" name="action">Registrarse
+	            		<button class="btn-large waves-effect waves-light" type="submit" name="action">Aceptar
 						    <i class="fas fa-user-plus"></i>
 						</button>
 	            	</div>

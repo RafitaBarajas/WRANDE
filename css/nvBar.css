@@ -7,7 +7,44 @@ nav{
 	width: 146px;
 }
 
+ul#home{
+	margin: 0px 18px;
+}
+
 .nav-fas{
 	margin: 0px 30px;
 	color: #00adb5;
+}
+
+.blue-text{
+	color: #00adb5 !important;
+}
+
+ul.sidenav li a{
+	font-size: 18px !important;
+	margin: 15px auto;
+}
+
+ul.sidenav li a.btn{
+	background-color: #00adb5;
+	color: #FFFFFF;
+}
+ul.sidenav li a.btn:hover{
+  background-color: #0dd4dd;
+  color: #FFFFFF;
+}
+ul.sidenav li a.btn:active{
+  background-color: #0dd4dd;
+  color: #FFFFFF;
+}
+ul.sidenav li a.btn:focus{
+  background-color: #0dd4dd;
+  color: #FFFFFF;
+}
+
+@media only screen and (max-width: 600px){
+	#logo{
+		height: 56px;
+		width: 123px;
+	}
 }

@@ -3,7 +3,9 @@
 }
 
 #logo-escom, #logo-c-cero{
-	padding-top: 30px;
+	padding-top: 20px;
+	height: 70%;
+	width: 70%;
 }
 
 @media only screen and (max-width: 992px){
