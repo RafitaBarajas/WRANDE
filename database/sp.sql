@@ -21,6 +21,36 @@ end**
 delimiter ;
 
 
+drop procedure if exists sp_editar;
+delimiter **
+create procedure sp_editar(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn date, in pto nvarchar(30), in mail nvarchar(40), in ncont nvarchar(20), in acont nvarchar(20))
+begin
+	declare msj nvarchar(60); 
+    declare exs int;
+	
+    set exs = (select count(*) from datos where email = mail and email != (select email from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom));
+    
+    if exs = 0 then
+			if acont = 'sc' and ncont = 'sc' then
+				update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom;
+                set msj='Datos actualizados!';
+			else
+				set exs = (select count(*) from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom);
+                if exs = 1 then
+					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom;
+					set msj='Datos actualizados';
+				else
+					set msj ='La contraseña anterior es incorrecta';
+				end if;
+        end if;
+    else
+		set msj ='Este correo ya está registrado por otro usuario';
+    end if;
+    select msj as MSJ;
+end**
+delimiter ;
+
+
 drop procedure if exists sp_login;
 delimiter **
 create procedure sp_login(in mail nvarchar(40), in cont nvarchar(20))
