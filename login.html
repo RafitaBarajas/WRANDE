@@ -5,16 +5,20 @@
         <title>Log In</title>
 
         <link type="text/css" rel="stylesheet" href="libs/materialize/css/materialize.min.css"  media="screen,projection"/>
+        <link href="libs/jquery-confirm/css/jquery-confirm.css" rel="stylesheet">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
         <script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
         <script src="libs/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+        <script src="libs/jquery-confirm/js/jquery-confirm.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
         <link href="css/login.css" rel="stylesheet">
+        <link href="css/confirm.css" rel="stylesheet">
 
+        <script type="text/javascript" src="js/loginA.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
     </head>
     <body>
@@ -30,7 +34,7 @@
                     </div>
 
                     <div class="card-content">
-                        <form action="?acc=1" method="POST" id="login">
+                        <form id="login" autocomplete="off">
 
                             <div class="row">
                                 <div class="input-field">
