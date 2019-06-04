@@ -1,0 +1,123 @@
+body{
+	background-color: #FFFFFF;
+}
+
+h1{
+	color: #00adb5;
+	margin: 50px 0px;
+}
+
+i.prefix.fas{
+  color: #9C9C9C;
+}
+
+/* label color */
+   .input-field label {
+     color: #9C9C9C;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #00adb5 !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #00adb5 !important;
+     box-shadow: 0 1px 0 0 #0dd4dd !important;
+   }
+
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #00adb5 !important;
+     box-shadow: 0 1px 0 0 #00adb5 !important;
+   }
+  
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #00adb5 !important;
+     box-shadow: 0 1px 0 0 #0dd4dd !important;
+   }
+
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #00adb5 !important;
+   }
+
+   .input-field input[type=password]:focus + label {
+     color: #00adb5 !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=password]:focus {
+     border-bottom: 1px solid #00adb5 !important;
+     box-shadow: 0 1px 0 0 #0dd4dd !important;
+   }
+
+   .input-field input[type=password].valid {
+     border-bottom: 1px solid #00adb5 !important;
+     box-shadow: 0 1px 0 0 #00adb5 !important;
+   }
+  
+   .input-field input[type=password].invalid {
+     border-bottom: 1px solid #00adb5 !important;
+     box-shadow: 0 1px 0 0 #0dd4dd !important;
+   }
+
+
+.datepicker-date-display, .datepicker-table td.is-selected{
+	background-color: #00adb5 !important;
+}
+
+.datepicker-cancel, .datepicker-done, .dropdown-content li>span{
+	color: #00adb5 !important;
+}
+
+button.btn-large{
+  margin-top: 35px;
+  margin-bottom: 50px;
+  font-size: 21px;
+  height: 65px;
+  width: 300px;
+
+  padding-top: 0%;
+
+  color: #FFFFFF;
+  background-color: #00adb5;
+
+}
+
+.btn-large:hover {
+  background-color: #0dd4dd;
+}
+.btn-large:active{
+  background-color: #0dd4dd;
+}
+.btn-large:focus{
+  background-color: #0dd4dd;
+}
+
+
+button.btn-small{
+  margin-top: 35px;
+  margin-bottom: 50px;
+  font-size: 18px;
+  height: 40px;
+  width: 250px;
+
+  padding-top: 0%;
+
+  color: #FFFFFF;
+  background-color: #00adb5;
+
+}
+
+.btn-small:hover {
+  background-color: #0dd4dd;
+}
+.btn-small:active{
+  background-color: #0dd4dd;
+}
+.btn-small:focus{
+  background-color: #0dd4dd;
+}
+
+
+.fa-user-plus{
+  padding-left: 7%;
+}

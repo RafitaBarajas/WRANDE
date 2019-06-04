@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Registro</title>
+	<title>Editar datos</title>
 
 	<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
 	<meta name="description" content="">
@@ -19,23 +19,21 @@
 	<script src="libs/jquery-3.1.1/jquery-3.1.1.min.js"></script>
 
 	<link href="libs/validetta/validetta.css" rel="stylesheet" type="text/css" media="screen" >
-	<link href="libs/jquery-confirm/css/jquery-confirm.css" rel="stylesheet">
 
 	<script type="text/javascript" src="libs/validetta/validetta.js"></script>
 	<script src="libs/validetta/validetta-es.js" type="text/javascript"></script>
-	<script src="libs/jquery-confirm/js/jquery-confirm.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<link rel="shortcut icon" type="image/x-icon" href="images/logo_icon.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/logo_fondoGris.png" />
 
-	<link href="css/registro.css" rel="stylesheet">
+	<link href="css/editar.css" rel="stylesheet">
 	<link href="css/nvBar.css" rel="stylesheet">
 	<link href="css/foot.css" rel="stylesheet">
-    <link href="css/confirm.css" rel="stylesheet">
 
-    <script type="text/javascript" src="js/registroA.js"></script>
-	<script type="text/javascript" src="js/registro.js"></script>
+	<script type="text/javascript" src="js/editar.js"></script>
+	<script type="text/javascript" src="js/obtenerDatos.js"></script>
+
 
 </head>
 
@@ -58,33 +56,34 @@
 			<div class = "row">
 				<div class = "col s12 m12 l12 center-align">
 					<h1>
-						¡Regístrate!
+						Editar datos
 					</h1>
 				</div>
 			</div>
 
-			<form id="formRE" autocomplete="off">
+			<input type="button" name="pba" id="pba" class="pba">
+
+			<form action="" method="POST" id="formEdit">
 
 				<div class="row">
 					<div class="col s12 m10 l8 offset-l2 offset-m1">
 						<div class="input-field">
 		                  <i class="prefix fas fa-user"></i>
-		                  <input id="nombre" name="nombre" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30" autocomplete="off">
+		                  <input id="nombre" name="nombre" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
 		                  <label for="nombre">Nombre(s)</label>
 		                </div>
 					</div>
 
 					<div class="col s6 m5 l4 offset-l2 offset-m1">
 						<div class="input-field">
-		                  <input id="APat" name="APat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30"
-		                  autocomplete="off">
+		                  <input id="APat" name="APat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
 		                  <label for="APat">Apellido Paterno</label>
 		                </div>
 					</div>
 
 					<div class="col s6 m5 l4">
 						<div class="input-field">
-		                  <input id="AMat" name="AMat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30" autocomplete="off">
+		                  <input id="AMat" name="AMat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
 		                  <label for="AMat">Apellido Materno</label>
 		                </div>
 					</div>
@@ -102,7 +101,7 @@
 		        	<div class="col s12 m10 l8 offset-l2 offset-m1">
 		        		<div class="input-field">
 		        		  <i class="prefix fas fa-envelope"></i>
-		                  <input id="email" name="email" type="text" class="validate counter" data-length="40" data-validetta="required,maxLength[40],email" autocomplete="off">
+		                  <input id="email" name="email" type="text" class="validate counter" data-length="40" data-validetta="required,maxLength[40],email">
 		                  <label for="email">Correo Electrónico</label>
 		                </div>
 		        	</div>
@@ -110,32 +109,46 @@
 
 				<div class="row">
 				  <div class="input-field col s12 m8 l6 offset-l3 offset-m2">
-				    <select name = "puesto" id="puesto">
+				    <select name = "puesto">
 				      <option value="" disabled selected>Elige una Opción</option>
-				      <option value="Docente">Docente</option>
-				      <option value="PAAE">PAAE</option>
-				      <option value="Directivo">Directivo</option>
-				      <option value="Confianza">De Confianza</option>
+				      <option value="1">Docente</option>
+				      <option value="2">PAAE</option>
+				      <option value="3">Directivo</option>
+				      <option value="4">De Confianza</option>
 				    </select>
 				    <label>Puesto</label>
 				  </div>
 					
 				</div>
 
+				<div class="row">
+					<div class="col s12 m12 l12 center-align">
+	            		<button class="waves-effect waves-light btn-small show">Cambiar contrase&ntilde;a</button> 
+	            	</div>
+				</div>
+
 				<div class = "row">
-	            	<div class="col s12 m10 l8 offset-l2 offset-m1">
+	            	<div class="col s12 m10 l8 offset-l2 offset-m1 psw">
 	            		<div class="input-field">
 	            		  <i class="prefix fas fa-lock"></i>
-	                      <input id="contra" name="contra" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16]" autocomplete="off">
-	                      <label for="contra">Contraseña</label>
+	                      <input id="contra" name="contra" type="password" class="validate counter cc" data-length="16" data-validetta="required,maxLength[16]" value="sc">
+	                      <label for="contra">Contraseña nueva</label>
 	                    </div>
 	            	</div>
 
-	            	<div class="col s12 m10 l8 offset-l2 offset-m1">
+	            	<div class="col s12 m10 l8 offset-l2 offset-m1 psw">
 	            		<div class="input-field">
 	            		  <i class="prefix fas fa-lock"></i>	
-	                      <input id="contra2" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16],equalTo[contra]" autocomplete="off">
+	                      <input id="contra2" type="password" class="validate counter cc" data-length="16" data-validetta="required,maxLength[16],equalTo[contra]" value="sc">
 	                      <label for="contra2">Confirma la Contraseña</label>
+	                    </div>
+	            	</div>
+
+	            	<div class="col s12 m10 l8 offset-l2 offset-m1 psw">
+	            		<div class="input-field">
+	            		  <i class="prefix fas fa-lock"></i>	
+	                      <input id="contraa" type="password" class="validate counter cc" data-length="16" data-validetta="required,maxLength[16]" value="sc">
+	                      <label for="contraa">Contraseña anterior</label>
 	                    </div>
 	            	</div>
 	            </div>

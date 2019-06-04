@@ -1,0 +1,16 @@
+.btn-red{
+  background-color: #26a69a !important;
+}
+.jconfirm-type-orange{
+  border-top: solid 8px #26a69a !important;
+}
+
+@keyframes type-orange{
+  1%, 50%, 100%{
+    border-color: #26a69a !important;
+  }
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-orange .jconfirm-title-c .jconfirm-icon-c{
+    color: #26a69a !important;
+}
