@@ -19,10 +19,10 @@
     }
 
     if(strcasecmp($msj,'Has sido registrado')==0){
-    	echo 1;
+    	echo echo "{\"estado\": \"1\"}";
     } else if (strcasecmp($msj,'Este correo ya está registrado')==0){	
-    	echo 2;
+    	echo echo "{\"estado\": \"2\"}";
     } else {
-    	echo 0;
+    	echo echo "{\"estado\": \"0\"}";
     } 
 ?>
