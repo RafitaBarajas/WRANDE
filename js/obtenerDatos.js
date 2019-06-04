@@ -3,7 +3,7 @@ $(document).ready(function(){
         e.preventDefault();
         $.ajax({
             method:"post",
-            url:"obtenerDatosA.php",
+            url:"php/obtenerDatosA.php",
             data:{"email":"mail"},
             success:function(resp){
                 var Jresp=$.parseJSON(resp);

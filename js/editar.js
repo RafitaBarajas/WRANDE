@@ -10,7 +10,7 @@ $(document).ready(
 
 		$('select').formSelect();
 
-		$("#formRE").validetta({
+		$("#formEdit").validetta({
 			showErrorMessages : true,
 			display : 'bubble',
 			bubblePosition: 'bottom',
@@ -21,7 +21,7 @@ $(document).ready(
   				e.preventDefault();
 		        $.ajax({
 		            method:"post",
-		            url:"editar.php",
+		            url:"php/editar.php",
 		            data: $("form#formEdit").serialize(),
 		            success:function(resp){
 		                var Jresp=$.parseJSON(resp);
@@ -58,6 +58,27 @@ $(document).ready(
 		                            },
 		                        },
 		                    });
+		                }
+		                else{
+		                	$.alert({
+		                        title: 'Datos correctos',
+		                        type: 'orange',
+		                        content: '¡Datos editados correctamente!',
+		                        icon: 'fas fa-globe',
+		                        theme: 'material',
+		                        useBootstrap: false,
+		                        boxWidth: '400px',
+		                        buttons: {
+		                            Ok:{
+		                                text: 'Ok',
+		                                btnClass: 'btn-red',
+		                            },
+		                        },
+		                        onDestroy: function () {
+		                        	$(location).attr('href',"principal.html");
+    							}
+		                    });
+
 		                }
 		            },
 		            error:function(){
