@@ -14,14 +14,17 @@
 	<link type="text/css" rel="stylesheet" href="libs/materialize/css/materialize.min.css"  media="screen,projection"/>
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
-	<script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
 	<script src="libs/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
 
 	<link href="libs/validetta/validetta.css" rel="stylesheet" type="text/css" media="screen" >
 	<link href="libs/jquery-confirm/css/jquery-confirm.css" rel="stylesheet">
 
+	<link href="libs/bootstrap/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
 	<script type="text/javascript" src="libs/validetta/validetta.js"></script>
+	<script type="text/javascript" src="js/nvBar.js"></script>
 	<script src="libs/validetta/validetta-es.js" type="text/javascript"></script>
 	<script src="libs/jquery-confirm/js/jquery-confirm.js"></script>
 
@@ -39,6 +42,79 @@
 
 </head>
 <body>
+<main>
+		<div class = "row" id="navRow">
+			<nav>
+			    <div class="nav-wrapper">
+
+			      <a href="#" data-target="sidenav-bars" class="sidenav-trigger">
+			      	<i class="fas nav-fas fa-bars"></i>
+			      </a>
+
+		      	  <ul class="right hide-on-med-and-down">
+		      		<li><a href="#" id="btn-user-nav" data-target="sidenav-user" class="sidenav-trigger"><i class="fas nav-fas fa-user"></i></a></li>
+		      	  </ul>
+
+			      <a  class="brand-logo center">
+			      	<img src="https://drive.google.com/uc?id=1lM9nUqmsL9CI4pGcCSx2NM3H3TOdSuT-" class = "responsive-img" id = "logo">
+			      </a>
+
+		      	  <ul class="sidenav" id="sidenav-bars">
+		      	  	
+			      	<li><a class = "blue-text"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Registros</a></li>
+			      	<li><a class = "blue-text"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Estad&iacute;sticas</a></li>
+			      	<li><a class = "blue-text"><i class="fas nav-fas fa-user-circle blue-text"></i>Crear Administrador</a></li>
+		      		<li><a href="#" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesi&oacute;n</a></li>
+		      	  </ul>
+
+		      	  <ul class="sidenav" id="sidenav-user">
+			      	<li><a class = "blue-text" id="btn-verPerfil-s"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Registros</a></li>
+			      	<li><a class = "blue-text" id="btn-verPerfil-s"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Estad&iacute;sticas</a></li>
+			      	<li><a class = "blue-text" id="btn-verPerfil-s"><i class="fas nav-fas fa-user-circle blue-text"></i>Crear Administrador</a></li>
+		      		<li><a href="#" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesi&oacute;n</a></li>
+		      	  </ul>
+			    </div>
+			</nav>
+		</div>
+</main>
+<footer class="page-footer">
+		 <div class="container">
+            <div class="row footerRow">
+              <div class="col l3 s12 center-align offset-l1">
+                <img src="https://drive.google.com/uc?id=1hfa888DkVzzoF11pg_7IZFi_ssb6FAgE" class = "responsive-img align-center" id="logo-c-cero">
+              </div>
+              <div class="col l3 s12 center-align offset-l1">
+                <img src="images/logo-escom.png" class = "responsive-img align-center" id="logo-escom">
+              </div>
+
+              <div class="col l3 s12 center-align offset-l1">
+                <h4 class="white-text">Colaboradores</h4>
+                <ul>
+                  <li>
+                  	<a class="white-text" href="#!">Barajas Pérez Rafael Sahid</a>
+                  </li>
+                  <li>
+                  	<a class="white-text" href="#!">Colón Valladares Diego Alejandro</a>
+                  </li>
+                  <li>
+                  	<a class="white-text" href="#!">Osornio Sánchez Christopher</a>
+                  </li>
+                  <li>
+                  	<a class="white-text" href="#!">Vázquez Hernández Yaxiri</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="footer-copyright">
+            <div class="container white-text">
+            	© 2019 CRAYDS
+            </div>
+          </div>
+
+	</footer>
 
 </body>
 </html>
