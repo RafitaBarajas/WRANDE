@@ -5,9 +5,10 @@ $(document).ready(function(){
             method:"post",
             url:"login.php",
             data: $("form#login").serialize(),
+            cache:false,
             success:function(resp){
                 var Jresp=$.parseJSON(resp);
-                if(Jresp["estado"]=="0"){
+                if(Jresp["estado"]=="1"){
                     $.alert({
                         title: 'Error',
                         type: 'orange',
