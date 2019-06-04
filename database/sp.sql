@@ -1,7 +1,7 @@
 
 drop procedure if exists sp_registro;
 delimiter **
-create procedure sp_registro(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn date, in pto nvarchar(30), in mail nvarchar(40), in cont nvarchar(20))
+create procedure sp_registro(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn nvarchar(60), in pto nvarchar(30), in mail nvarchar(40), in cont nvarchar(20))
 begin
 	declare msj nvarchar(60); 
     declare idp int;
@@ -13,7 +13,7 @@ begin
        
 	if exs = 0 and exs1 = 0 then
 		set idp =(select ifnull(max(idprof),0) + 1 from datos);
-		insert into datos values(idp, nom, apat, amat, fn, pto, mail, aes_encrypt(cont, 'huecofriends'));
+		insert into datos values(idp, nom, apat, amat, STR_TO_DATE(REPLACE(fn,'/','.') ,GET_FORMAT(date,'EUR')), pto, mail, aes_encrypt(cont, 'huecofriends'));
 		set msj='Has sido registrado';
 	else
 		set msj ='Este correo ya está registrado';

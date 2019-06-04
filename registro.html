@@ -69,21 +69,22 @@
 					<div class="col s12 m10 l8 offset-l2 offset-m1">
 						<div class="input-field">
 		                  <i class="prefix fas fa-user"></i>
-		                  <input id="nombre" name="nombre" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+		                  <input id="nombre" name="nombre" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30" autocomplete="off">
 		                  <label for="nombre">Nombre(s)</label>
 		                </div>
 					</div>
 
 					<div class="col s6 m5 l4 offset-l2 offset-m1">
 						<div class="input-field">
-		                  <input id="APat" name="APat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+		                  <input id="APat" name="APat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30"
+		                  autocomplete="off">
 		                  <label for="APat">Apellido Paterno</label>
 		                </div>
 					</div>
 
 					<div class="col s6 m5 l4">
 						<div class="input-field">
-		                  <input id="AMat" name="AMat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+		                  <input id="AMat" name="AMat" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30" autocomplete="off">
 		                  <label for="AMat">Apellido Materno</label>
 		                </div>
 					</div>
@@ -101,7 +102,7 @@
 		        	<div class="col s12 m10 l8 offset-l2 offset-m1">
 		        		<div class="input-field">
 		        		  <i class="prefix fas fa-envelope"></i>
-		                  <input id="email" name="email" type="text" class="validate counter" data-length="40" data-validetta="required,maxLength[40],email">
+		                  <input id="email" name="email" type="text" class="validate counter" data-length="40" data-validetta="required,maxLength[40],email" autocomplete="off">
 		                  <label for="email">Correo Electrónico</label>
 		                </div>
 		        	</div>
@@ -109,12 +110,12 @@
 
 				<div class="row">
 				  <div class="input-field col s12 m8 l6 offset-l3 offset-m2">
-				    <select name = "puesto">
+				    <select name = "puesto" id="puesto">
 				      <option value="" disabled selected>Elige una Opción</option>
-				      <option value="1">Docente</option>
-				      <option value="2">PAAE</option>
-				      <option value="3">Directivo</option>
-				      <option value="4">De Confianza</option>
+				      <option value="Docente">Docente</option>
+				      <option value="PAAE">PAAE</option>
+				      <option value="Directivo">Directivo</option>
+				      <option value="Confianza">De Confianza</option>
 				    </select>
 				    <label>Puesto</label>
 				  </div>
@@ -125,7 +126,7 @@
 	            	<div class="col s12 m10 l8 offset-l2 offset-m1">
 	            		<div class="input-field">
 	            		  <i class="prefix fas fa-lock"></i>
-	                      <input id="contra" name="contra" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16]">
+	                      <input id="contra" name="contra" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16]" autocomplete="off">
 	                      <label for="contra">Contraseña</label>
 	                    </div>
 	            	</div>
@@ -133,7 +134,7 @@
 	            	<div class="col s12 m10 l8 offset-l2 offset-m1">
 	            		<div class="input-field">
 	            		  <i class="prefix fas fa-lock"></i>	
-	                      <input id="contra2" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16],equalTo[contra]">
+	                      <input id="contra2" type="password" class="validate counter" data-length="16" data-validetta="required,maxLength[16],equalTo[contra]" autocomplete="off">
 	                      <label for="contra2">Confirma la Contraseña</label>
 	                    </div>
 	            	</div>

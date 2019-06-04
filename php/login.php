@@ -14,9 +14,9 @@
     }
 
     if(strcasecmp($msj,'Administrador')==0){
-    	echo "{\"estado\": \"1\"}";
+    	echo "{\"estado\": \"1\"}";//crear sesión
     } else if (strcasecmp($msj,'Profesor')==0){	
-    	echo "{\"estado\": \"2\"}";
+    	echo "{\"estado\": \"2\"}";//crear sesión
     } else if(strcasecmp($msj,'Usuario no encontrado')==0){
     	echo "{\"estado\": \"0\"}";
     } 
