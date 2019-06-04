@@ -23,7 +23,9 @@ begin
 end**
 delimiter ;
 
-# LEER: ncont es la nueva contraseña y acont es la antigua (para cuando quiera cambiarla, si no se quiere cambiar meter 'sc' en ambas). amail es el correo del usuario que está cambiando los datos (el que está en la variable de sesión).
+# LEER LEER LEER LEER LEER LEER LEER LEER 
+# ncont es la nueva contraseña y acont es la antigua (para cuando quiera cambiarla, si no se quiere cambiar meter 'sc' en ambas). 
+# amail es el correo del usuario que está cambiando los datos (el que está en la variable de sesión).
 drop procedure if exists sp_editar;
 delimiter **
 create procedure sp_editar(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn date, in pto nvarchar(30), in mail nvarchar(40), in ncont nvarchar(20), in acont nvarchar(20), in amail nvarchar(20))
@@ -256,6 +258,19 @@ begin
 end**
 delimiter ;
 
+
+drop procedure if exists sp_eliminar;
+delimiter **
+create procedure sp_eliminar(in mail nvarchar(30))
+begin
+	declare msj nvarchar(60); 
+    declare exs int;
+    
+	delete from datos where email = mail;
+	set msj='Eliminado';
+    select msj as MSJ;
+end**
+delimiter ;
 
 
 
