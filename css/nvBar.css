@@ -1,15 +1,32 @@
+div.row#navRow{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	width: 100%;
+}
+
 nav{
 	background-color: #eeeeee !important;
 }
 
 #logo{
-	height: 62px;
-	width: 146px;
+	height: 60px;
+	width: 142px;
+	padding-bottom: 2px;
 }
 
 ul#home{
-	margin: 0px 18px;
+	margin: 0px 35px;
+	height: 64px;
 }
+ul#home li a{
+	height: 64px;
+}
+
+ul#user{
+	margin: 0px 0px;
+}
+
 
 .nav-fas{
 	margin: 0px 30px;
