@@ -28,7 +28,7 @@ delimiter ;
 # amail es el correo del usuario que está cambiando los datos (el que está en la variable de sesión).
 drop procedure if exists sp_editar;
 delimiter **
-create procedure sp_editar(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn date, in pto nvarchar(30), in mail nvarchar(40), in ncont nvarchar(20), in acont nvarchar(20), in amail nvarchar(20))
+create procedure sp_editar(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn nvarchar(60), in pto nvarchar(30), in mail nvarchar(40), in ncont nvarchar(20), in acont nvarchar(20), in amail nvarchar(20))
 begin
 	declare msj nvarchar(60); 
     declare exs int;
@@ -43,12 +43,12 @@ begin
     
     if cc = 0 then
 		if acont = 'sc' and ncont = 'sc' then
-				update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail where email = amail;
+				update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = (STR_TO_DATE(REPLACE(fn,'/','.') ,GET_FORMAT(date,'EUR'))), puesto = pto, email = mail where email = amail;
                 set msj='Datos actualizados';
 		else
 				set exs = (select count(*) from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(20))) = acont and email = amail);
                 if exs = 1 then
-					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where email = amail;
+					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = (STR_TO_DATE(REPLACE(fn,'/','.') ,GET_FORMAT(date,'EUR'))), puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where email = amail;
 					set msj='Datos actualizados';
 				else
 					set msj ='La contraseña anterior es incorrecta';
@@ -60,12 +60,12 @@ begin
 			set exs1 = (select count(*) from admin where email = mail);
             if exs = 0 and exs1 = 0 then
 				if acont = 'sc' and ncont = 'sc' then
-					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail where email = amail;
+					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = (STR_TO_DATE(REPLACE(fn,'/','.') ,GET_FORMAT(date,'EUR'))), puesto = pto, email = mail where email = amail;
 					set msj='Datos actualizados!';
 				else
 					set exs = (select count(*) from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(20))) = acont and email = amail);
 					if exs = 1 then
-						update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where email = amail;
+						update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = (STR_TO_DATE(REPLACE(fn,'/','.') ,GET_FORMAT(date,'EUR'))), puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where email = amail;
 						set msj='Datos actualizados';
 					else
 						set msj ='La contraseña anterior es incorrecta';
@@ -279,7 +279,7 @@ drop procedure if exists sp_obtenerDatos;
 delimiter **
 create procedure sp_obtenerDatos(in mail nvarchar(30))
 begin
-	select nombre, apaterno, amaterno, fnac, puesto, email from datos;
+	select nombre, apaterno, amaterno, DATE_FORMAT(fnac,'%d/%m/%Y'), puesto, email from datos;
 end**
 delimiter ;
 

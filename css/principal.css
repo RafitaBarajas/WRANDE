@@ -183,3 +183,37 @@ button.btn-large{
 .fa-save{
   padding-left: 7%;
 }
+
+.fa-info-circle{
+  padding-left: 2%;
+}
+
+.btn-blue{
+  background-color: #00adb5 !important;
+}
+.jconfirm-type-blue{
+  border-top: solid 8px #00adb5 !important;
+}
+
+@keyframes type-blue{
+  1%{
+    border-color: #00adb5!important;
+  }
+}
+
+h3{
+  color: #00adb5;
+}
+
+@media only screen and (max-width: 992px){
+  div.col.s1 i.fa-plus, div.col.s1 i.fa-minus{
+    margin-top: 50%;
+  }
+}
+
+
+@media only screen and (max-width: 600px){
+  div.col.s1 i.fa-plus, div.col.s1 i.fa-minus{
+    margin-top: 90%;
+  }
+}
