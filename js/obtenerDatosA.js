@@ -1,10 +1,8 @@
-$(document).ready(function(){
-    $(document).on("click", "#pba", function(e){
-        e.preventDefault();
+$(document).ready(function(e){
+        //e.preventDefault();
         $.ajax({
             method:"post",
             url:"php/obtenerDatos.php",
-            data:{"email":"asd@asd.asd"},
             success:function(resp){
                 var Jresp=$.parseJSON(resp);
 
@@ -14,6 +12,16 @@ $(document).ready(function(){
                 $("#fecha").val(Jresp["fnac"]);
                 $("#puesto").val(Jresp["puesto"]);
                 $("#email").val(Jresp["email"]);
+
+                $("#email").focus();
+                $("#puesto").focus();
+                $("#fecha").focus();
+                $("#AMat").focus();
+                $("#APat").focus();
+                $("#nombre").focus();
+                $("#nombre").blur();
+
+
 
             },
             error:function(){
@@ -32,6 +40,5 @@ $(document).ready(function(){
                     }
                 });
             }
-        });
-    });   
+        }); 
 });

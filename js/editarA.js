@@ -12,7 +12,9 @@ $(document).ready(function(){
 		            method:"post",
 		            url:"php/editar.php",
 		            data: $("form#formEdit").serialize(),
+		            cache: false,
 		            success:function(resp){
+		            	alert(resp);
 		                var Jresp=$.parseJSON(resp);
 		                if(Jresp["estado"]=="1"){
 		                    $.alert({
