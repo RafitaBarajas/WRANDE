@@ -148,7 +148,7 @@ i.prefix.fas{
   color: #00adb5 !important;
 }
 
-div.col.s1 i.fa-plus, div.col.s1 i.fa-minus{
+div.col.s1 i.fa-plus, div.col.s1 i.fa-minus div.vertical-margin{
   margin-top: 25%;
 }
 
