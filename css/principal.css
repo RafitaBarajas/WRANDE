@@ -148,7 +148,7 @@ i.prefix.fas{
   color: #00adb5 !important;
 }
 
-div.col.s1 i.fa-plus, div.col.s1 i.fa-minus div.vertical-margin{
+div.col.s1 i.fa-plus, div.col.s1 i.fa-minus{
   margin-top: 25%;
 }
 
@@ -203,4 +203,17 @@ button.btn-large{
 
 h3{
   color: #00adb5;
+}
+
+@media only screen and (max-width: 992px){
+  div.col.s1 i.fa-plus, div.col.s1 i.fa-minus{
+    margin-top: 50%;
+  }
+}
+
+
+@media only screen and (max-width: 600px){
+  div.col.s1 i.fa-plus, div.col.s1 i.fa-minus{
+    margin-top: 90%;
+  }
 }
