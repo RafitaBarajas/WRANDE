@@ -58,8 +58,10 @@ $(document).ready(
 			clon.find("[for='instCap0']").removeAttr("for").attr("for","instCap"+n);
 
 			clon.find("[id='paisCap0']").removeAttr("id").attr("id","paisCap"+n);
+			clon.find("[name='paisCap0']").removeAttr("name").attr("name","paisCap"+n);
 
 			clon.find("[id='yrCap0']").removeAttr("id").attr("id","yrCap"+n);
+			clon.find("[name='yrCap0']").removeAttr("name").attr("name","yrCap"+n);
 
 			clon.find("[id='hrsCap0']").removeAttr("id").attr("id","hrsCap"+n);
 			clon.find("[name='hrsCap0']").removeAttr("name").attr("name","hrsCap"+n);
@@ -96,8 +98,10 @@ $(document).ready(
 			clon.find("[for='instAct0']").removeAttr("for").attr("for","instAct"+m);
 
 			clon.find("[id='paisAct0']").removeAttr("id").attr("id","paisAct"+m);
+			clon.find("[name='paisAct0']").removeAttr("name").attr("name","paisAct"+m);
 
 			clon.find("[id='yrAct0']").removeAttr("id").attr("id","yrAct"+m);
+			clon.find("[name='yrAct0']").removeAttr("name").attr("name","yrAct"+m);
 
 			clon.find("[id='hrsAct0']").removeAttr("id").attr("id","hrsAct"+m);
 			clon.find("[name='hrsAct0']").removeAttr("name").attr("name","hrsAct"+m);

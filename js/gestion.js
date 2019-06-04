@@ -38,12 +38,16 @@ $(document).ready(
 			clon.find("[for='instGest0']").removeAttr("for").attr("for","instGest"+n);
 
 			clon.find("[id='mesDeGest0']").removeAttr("id").attr("id","mesDeGest"+n);
+			clon.find("[name='mesDeGest0']").removeAttr("name").attr("name","mesDeGest"+n);
 
 			clon.find("[id='yrDeGest0']").removeAttr("id").attr("id","yrDeGest"+n);
+			clon.find("[name='yrDeGest0']").removeAttr("name").attr("name","yrDeGest"+n);
 
 			clon.find("[id='mesAGest0']").removeAttr("id").attr("id","mesAGest"+n);
+			clon.find("[name='mesAGest0']").removeAttr("name").attr("name","mesAGest"+n);
 
 			clon.find("[id='yrAGest0']").removeAttr("id").attr("id","yrAGest"+n);
+			clon.find("[name='yrAGest0']").removeAttr("name").attr("name","yrAGest"+n);
 
 
 			if(n!=1){

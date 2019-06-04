@@ -57,12 +57,16 @@ $(document).ready(
 			clon.find("[for='orgExpP0']").removeAttr("for").attr("for","orgExpP"+n);
 
 			clon.find("[id='mesDeExpP0']").removeAttr("id").attr("id","mesDeExpP"+n);
+			clon.find("[name='mesDeExpP0']").removeAttr("name").attr("name","mesDeExpP"+n);
 
 			clon.find("[id='yrDeExpP0']").removeAttr("id").attr("id","yrDeExpP"+n);
+			clon.find("[name='yrDeExpP0']").removeAttr("name").attr("name","yrDeExpP"+n);
 
 			clon.find("[id='mesAExpP0']").removeAttr("id").attr("id","mesAExpP"+n);
+			clon.find("[name='mesAExpP0']").removeAttr("name").attr("name","mesAExpP"+n);
 
 			clon.find("[id='yrAExpP0']").removeAttr("id").attr("id","yrAExpP"+n);
+			clon.find("[name='yrAExpP0']").removeAttr("name").attr("name","yrAExpP"+n);
 
 
 			if(n!=1){

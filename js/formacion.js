@@ -30,6 +30,7 @@ $(document).ready(
 			clon.removeAttr("id").attr("id","rowFA"+n);
 
 			clon.find("[id='nvl0']").removeAttr("id").attr("id","nvl"+n);
+			clon.find("[name='nvl0']").removeAttr("name").attr("name","nvl"+n);
 
 			clon.find("[id='nombre0']").removeAttr("id").attr("id","nombre"+n);
 			clon.find("[name='nombre0']").removeAttr("name").attr("name","nombre"+n);
@@ -40,8 +41,10 @@ $(document).ready(
 			clon.find("[for='inst0']").removeAttr("for").attr("for","inst"+n);
 
 			clon.find("[id='pais0']").removeAttr("id").attr("id","pais"+n);
+			clon.find("[name='pais0']").removeAttr("name").attr("name","pais"+n);
 
 			clon.find("[id='yr0']").removeAttr("id").attr("id","yr"+n);
+			clon.find("[name='yr0']").removeAttr("name").attr("name","yr"+n);
 
 			clon.find("[id='ced0']").removeAttr("id").attr("id","ced"+n);
 			clon.find("[name='ced0']").removeAttr("name").attr("name","ced"+n);
