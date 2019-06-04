@@ -1,5 +1,5 @@
 <?php
-    $conexion = mysqli_connect("localhost","root","n0m3l0","cero");
+    $conexion = mysqli_connect("localhost","root","","cero");
     mysqli_query($conexion, "SET NAMES 'utf8'"); 
  
     $nom = trim($_POST["nombre"]);

@@ -3,15 +3,16 @@ $(document).ready(function(){
         e.preventDefault();
         $.ajax({
             method:"post",
-            url:"obtenerDatosA.php",
-            data:{"email":"mail"},
+            url:"php/obtenerDatos.php",
+            data:{"email":"asd@asd.asd"},
             success:function(resp){
                 var Jresp=$.parseJSON(resp);
 
                 $("#nombre").val(Jresp["nombre"]);
-                $("#APat").val(Jresp["APat"]);
-                $("#AMat").val(Jresp["AMat"]);
-                $("#fecha").val(Jresp["fecha"]);
+                $("#APat").val(Jresp["apaterno"]);
+                $("#AMat").val(Jresp["amaterno"]);
+                $("#fecha").val(Jresp["fnac"]);
+                $("#puesto").val(Jresp["puesto"]);
                 $("#email").val(Jresp["email"]);
 
             },
