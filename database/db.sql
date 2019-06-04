@@ -14,6 +14,13 @@ create table Datos
     contra varbinary(255) not null
 );
 
+create table Admin
+(
+	idadmin int not null auto_increment primary key,
+    email nvarchar(40) not null,
+	contra varbinary(255) not null
+);
+
 create table FAcademica
 (
 	idfa int not null auto_increment primary key,
