@@ -41,6 +41,7 @@
 	<script type="text/javascript" src="js/gestion.js"></script>
 	<script type="text/javascript" src="js/productos.js"></script>
 	<script type="text/javascript" src="js/experiencia.js"></script>
+	<script type="text/javascript" src="js/logroPremio.js"></script>
 	<script type="text/javascript" src="js/nvBar.js"></script>
 
 </head>
@@ -1725,7 +1726,7 @@
 
 		                <!-- Logros y Premios -->
 		                <div class="bhoechie-tab-content">
-		                    <h1>Logros Profesionales <i class="fas fa-info-circle" id="infoLogro"></h1>
+		                    <h1>Logros Profesionales <i class="fas fa-info-circle" id="infoLogro"></i></h1>
 		                    <div id="rowLogro">
 		                    	<div class="col s9 m9 l9 offset-l1 offset-s1 offset-m1">
 		                    		<div class="input-field">
@@ -1742,6 +1743,35 @@
 
 		                    <form action="?acc=1" method="POST" id="formLogro">
 		                    	<div class="row center-align" id="baseLogro">
+		                    	</div>
+
+		                    	<div class="row">
+									<div class="col s12 m12 l12 center-align">
+					            		<button class="btn-large waves-effect waves-light" type="submit" name="action">Guardar Datos
+										    <i class="fas fa-save"></i>
+										</button>
+					            	</div>
+								</div>
+
+		                    </form>
+
+		                    <h1>Premios, Distinciones y Reconocimientos <i class="fas fa-info-circle" id="infoPremio"></i></h1>
+		                    <div id="rowPremio">
+		                    	<div class="col s9 m9 l9 offset-l1 offset-s1 offset-m1">
+		                    		<div class="input-field">
+					                  <i class="prefix fas fa-award"></i>
+					                  <textarea id="descPremio0" name="descPremio0" type="text" class="materialize-textarea counter" data-validetta="required,maxLength[255]" data-length="255"></textarea> 
+					                  <label for="descPremio0">Descripción del Premio o Reconocimiento</label>
+					                </div>
+		                    	</div>
+
+		                    	<div class="col s1 m1 l1 delPremio">
+	                            	<i class="fas fa-plus"></i>
+	                            </div>
+		                    </div>
+
+		                    <form action="?acc=1" method="POST" id="formPremio">
+		                    	<div class="row center-align" id="basePremio">
 		                    	</div>
 
 		                    	<div class="row">
