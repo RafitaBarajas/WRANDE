@@ -223,7 +223,6 @@ end**
 delimiter ;
 
 
-
 drop procedure if exists sp_PartPE;
 delimiter **
 create procedure sp_PartPE(in txt tinytext, in mail nvarchar(40))
@@ -238,6 +237,26 @@ begin
     select msj as MSJ;
 end**
 delimiter ;
+
+
+drop procedure if exists sp_DatosInst;
+delimiter **
+create procedure sp_DatosInst(cc nvarchar(3),in tc nvarchar(3), in fc date, in ins nvarchar(30), in fins date, in idl15 nvarchar(30), 
+							  in hrsl15 int(3), in idp15 nvarchar(30), in hrsp15 int(3), in tip15 nvarchar(3), in idl16 nvarchar(30), in hrsl16 int(3), 
+                              in idp16 nvarchar(30), in hrsp16 int(3), in tip16 nvarchar(3), in mail nvarchar(40))
+begin
+	declare msj nvarchar(60); 
+    declare id int;
+    declare exs int;
+    
+	set id =(select ifnull(max(iddi),0) + 1 from DatosInst);
+	insert into DatosInst values(id,(select idprof from datos where email = mail),cc,tc,fc,ins,fins,idl15,hrsl15,idp15,hrsp15,tip15,idl16,hrsl16,idp16,hrsp16,tip16);
+	set msj='Registrado';
+    select msj as MSJ;
+end**
+delimiter ;
+
+
 
 
 
