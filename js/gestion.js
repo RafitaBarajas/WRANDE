@@ -66,5 +66,27 @@ $(document).ready(
 			$("#rowGest"+v).remove();
 		});
 
+		$("#infoGest").on("click", function(){
+			$.alert({
+				icon: 'fas fa-info-circle',
+			    title: '<div class="center-align"><h3>Gestión Académica</h3></div>',
+			    content: '<div align="justify"><p>Ingrese las actividades o puestos académicos '+
+			    'que ha desempeñado, incluta el nombre de dicha actividado o puesto, la institución '+
+			    'en donde se desempeño, el mes y año de inicio al igual que de final.</p></div>',
+			    boxWidth: '50%',
+			    type: 'blue',
+			    theme: 'material',
+    			useBootstrap: false,
+				buttons: {
+			        Entendido: {
+			        	btnClass: 'btn-blue',
+			        	action: function(){
+			        	}
+			    	},
+			     	
+				}
+			});
+		});
+
 	}
 );
