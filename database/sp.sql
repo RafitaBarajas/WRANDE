@@ -44,7 +44,7 @@ begin
     if cc = 0 then
 		if acont = 'sc' and ncont = 'sc' then
 				update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail where email = amail;
-                set msj='Datos actualizados!';
+                set msj='Datos actualizados';
 		else
 				set exs = (select count(*) from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(20))) = acont and email = amail);
                 if exs = 1 then
@@ -79,6 +79,8 @@ begin
     select msj as MSJ;
 end**
 delimiter ;
+
+
 
 drop procedure if exists sp_registroAdmin;
 delimiter **
@@ -269,6 +271,15 @@ begin
 	delete from datos where email = mail;
 	set msj='Eliminado';
     select msj as MSJ;
+end**
+delimiter ;
+
+
+drop procedure if exists sp_obtenerDatos;
+delimiter **
+create procedure sp_obtenerDatos(in mail nvarchar(30))
+begin
+	select nombre, apaterno, amaterno, fnac, puesto, email from datos;
 end**
 delimiter ;
 
