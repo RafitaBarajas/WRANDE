@@ -9,11 +9,12 @@
     $puesto = trim($_POST["puesto"]);
     $email = trim($_POST["email"]);
     $contra = trim($_POST["contra"]);
-    $contra = trim($_POST["acontra"]);
-    $amail = trim($_POST["amail"]);
+    $acontra = trim($_POST["acontra"]);
+    
+    $amail = "d@d.d";  //SESION SESION SESION SESION
 
 
-    $sql = "call sp_editar('$nom','$apa', '$ama', '$bd', '$puesto', '$email', '$contra', 'acontra', 'amail')";
+    $sql = "call sp_editar('$nom','$apa', '$ama', '$bd', '$puesto', '$email', '$contra', '$acontra', '$amail');";
     $respuesta = mysqli_query($conexion,$sql);
     $msj = "";
 
@@ -22,10 +23,10 @@
     }
 
     if(strcasecmp($msj,'Este correo ya está registrado por otro usuario')==0){
-    	echo echo "{\"estado\": \"1\"}";
+    	echo "{\"estado\": \"1\"}";
     } else if (strcasecmp($msj,'La contraseña anterior es incorrecta')==0){	
-    	echo echo "{\"estado\": \"2\"}";
+    	echo "{\"estado\": \"2\"}";
     } else {
-    	echo echo "{\"estado\": \"0\"}";
+    	echo "{\"estado\": \"0\"}";
     } 
 ?>
