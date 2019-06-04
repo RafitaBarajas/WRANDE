@@ -1,3 +1,4 @@
+
 drop procedure if exists sp_registro;
 delimiter **
 create procedure sp_registro(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn date, in pto nvarchar(30), in mail nvarchar(40), in cont nvarchar(20))
@@ -5,10 +6,12 @@ begin
 	declare msj nvarchar(60); 
     declare idp int;
     declare exs int;
-
+	declare exs1 int;
+    
 	set exs = (select count(*) from datos where email = mail);
+	set exs1 = (select count(*) from admin where email = mail);
        
-	if exs = 0 then
+	if exs = 0 and exs1 = 0 then
 		set idp =(select ifnull(max(idprof),0) + 1 from datos);
 		insert into datos values(idp, nom, apat, amat, fn, pto, mail, aes_encrypt(cont, 'huecofriends'));
 		set msj='Has sido registrado';
@@ -20,33 +23,84 @@ begin
 end**
 delimiter ;
 
-
+# LEER LEER LEER LEER LEER LEER LEER LEER 
+# ncont es la nueva contraseña y acont es la antigua (para cuando quiera cambiarla, si no se quiere cambiar meter 'sc' en ambas). 
+# amail es el correo del usuario que está cambiando los datos (el que está en la variable de sesión).
 drop procedure if exists sp_editar;
 delimiter **
-create procedure sp_editar(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn date, in pto nvarchar(30), in mail nvarchar(40), in ncont nvarchar(20), in acont nvarchar(20))
+create procedure sp_editar(in nom nvarchar(30), in apat nvarchar(30), in amat nvarchar(60), in fn date, in pto nvarchar(30), in mail nvarchar(40), in ncont nvarchar(20), in acont nvarchar(20), in amail nvarchar(20))
 begin
 	declare msj nvarchar(60); 
     declare exs int;
-	
-    set exs = (select count(*) from datos where email = mail and email != (select email from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom));
+	declare exs1 int;
+    declare cc int;
     
-    if exs = 0 then
-			if acont = 'sc' and ncont = 'sc' then
-				update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom;
+    if amail = mail then
+		set cc = 0;
+	else
+		set cc = 1;
+	end if;
+    
+    if cc = 0 then
+		if acont = 'sc' and ncont = 'sc' then
+				update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail where email = amail;
                 set msj='Datos actualizados!';
-			else
-				set exs = (select count(*) from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom);
+		else
+				set exs = (select count(*) from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(20))) = acont and email = amail);
                 if exs = 1 then
-					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = acont and nombre = nom;
+					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where email = amail;
 					set msj='Datos actualizados';
 				else
 					set msj ='La contraseña anterior es incorrecta';
 				end if;
         end if;
-    else
-		set msj ='Este correo ya está registrado por otro usuario';
+    else 
+		if cc = 1 then
+			set exs = (select count(*) from datos where email = mail);
+			set exs1 = (select count(*) from admin where email = mail);
+            if exs = 0 and exs1 = 0 then
+				if acont = 'sc' and ncont = 'sc' then
+					update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail where email = amail;
+					set msj='Datos actualizados!';
+				else
+					set exs = (select count(*) from datos where (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(20))) = acont and email = amail);
+					if exs = 1 then
+						update datos set nombre = nom, apaterno = apat, amaterno = amat, fnac = fn, puesto = pto, email = mail, contra = aes_encrypt(ncont, 'huecofriends') where email = amail;
+						set msj='Datos actualizados';
+					else
+						set msj ='La contraseña anterior es incorrecta';
+					end if;
+				end if;
+			else
+				set msj ='Este correo ya está registrado por otro usuario';
+			end if;
+		end if;	
     end if;
     select msj as MSJ;
+end**
+delimiter ;
+
+drop procedure if exists sp_registroAdmin;
+delimiter **
+create procedure sp_registroAdmin(in mail nvarchar(40), in cont nvarchar(20))
+begin
+	declare msj nvarchar(60); 
+    declare ida int;
+    declare exs int;
+	declare exs1 int;
+    
+	set exs = (select count(*) from datos where email = mail);
+	set exs1 = (select count(*) from admin where email = mail);
+       
+	if exs = 0 and exs1 = 0 then
+		set ida =(select ifnull(max(idadmin),0) + 1 from admin);
+		insert into admin values(ida, mail, aes_encrypt(cont, 'huecofriends'));
+		set msj='Administrador registrado';
+	else
+		set msj ='Este correo ya está registrado';
+       end if;
+       
+   select msj as MSJ;
 end**
 delimiter ;
 
@@ -56,12 +110,14 @@ delimiter **
 create procedure sp_login(in mail nvarchar(40), in cont nvarchar(20))
 begin
 	declare exs int;
-    declare msj nvarchar(60);    
+    declare msj nvarchar(60); 
     
-    if mail = 'admin@mail.com' and cont = 'admin' then
+    set exs = (select count(*) from admin where email = mail and (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(20))) = cont);
+    
+    if exs = 1 then
 		set msj = 'Administrador';
 	else
-    	set exs = (select count(*) from datos where email = mail and (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(16))) = cont);
+    	set exs = (select count(*) from datos where email = mail and (CAST(AES_DECRYPT(contra, 'huecofriends') AS char(20))) = cont);
 		if exs = 1 then
 				set msj='Profesor';
 		else
@@ -169,7 +225,6 @@ end**
 delimiter ;
 
 
-
 drop procedure if exists sp_PartPE;
 delimiter **
 create procedure sp_PartPE(in txt tinytext, in mail nvarchar(40))
@@ -184,6 +239,39 @@ begin
     select msj as MSJ;
 end**
 delimiter ;
+
+
+drop procedure if exists sp_DatosInst;
+delimiter **
+create procedure sp_DatosInst(cc nvarchar(3),in tc nvarchar(3), in fc date, in ins nvarchar(30), in fins date, in idl15 nvarchar(30), 
+							  in hrsl15 int(3), in idp15 nvarchar(30), in hrsp15 int(3), in tip15 nvarchar(3), in idl16 nvarchar(30), in hrsl16 int(3), 
+                              in idp16 nvarchar(30), in hrsp16 int(3), in tip16 nvarchar(3), in mail nvarchar(40))
+begin
+	declare msj nvarchar(60); 
+    declare id int;
+    declare exs int;
+    
+	set id =(select ifnull(max(iddi),0) + 1 from DatosInst);
+	insert into DatosInst values(id,(select idprof from datos where email = mail),cc,tc,fc,ins,fins,idl15,hrsl15,idp15,hrsp15,tip15,idl16,hrsl16,idp16,hrsp16,tip16);
+	set msj='Registrado';
+    select msj as MSJ;
+end**
+delimiter ;
+
+
+drop procedure if exists sp_eliminar;
+delimiter **
+create procedure sp_eliminar(in mail nvarchar(30))
+begin
+	declare msj nvarchar(60); 
+    declare exs int;
+    
+	delete from datos where email = mail;
+	set msj='Eliminado';
+    select msj as MSJ;
+end**
+delimiter ;
+
 
 
 

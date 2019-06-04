@@ -14,6 +14,13 @@ create table Datos
     contra varbinary(255) not null
 );
 
+create table Admin
+(
+	idadmin int not null auto_increment primary key,
+    email nvarchar(40) not null,
+	contra varbinary(255) not null
+);
+
 create table FAcademica
 (
 	idfa int not null auto_increment primary key,
@@ -88,5 +95,37 @@ create table PartPE
     texto tinytext not null,
     foreign key(idprof) references Datos(idprof) on delete cascade on update cascade
 );
+
+create table DatosInst
+(
+	iddi int not null auto_increment primary key,
+    idprof int not null,  
+    ccontra nvarchar(3),
+    tcontra nvarchar(3),
+    fcontra date,
+    instancias nvarchar(30),
+    finstancias date,
+    idlic15 nvarchar(30),
+    hrslic15 int(3),
+    idpos15 nvarchar(30),
+    hrspos15 int(3),
+    tipoc15 nvarchar(3),
+    idlic16 nvarchar(30),
+    hrslic16 int(3),
+    idpos16 nvarchar(30),
+    hrspos16 int(3),
+    tipoc16 nvarchar(3),
+    foreign key(idprof) references Datos(idprof) on delete cascade on update cascade
+);
+
+
+
+
+
+
+
+
+
+
 
 
