@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conexion = mysqli_connect("localhost","root","","cero");
+    $conexion = mysqli_connect("localhost","root","n0m3l0","cero");
     mysqli_query($conexion, "SET NAMES 'utf8'"); 
 
     $mail = trim($_POST["email"]);
@@ -15,7 +15,7 @@
     }
 
     if(strcasecmp($msj,'Administrador')==0){
-        $_SESSION["emailsesion"] = $mail;
+        $_SESSION["emailadministrador"] = $mail;
     	echo "{\"estado\": \"1\"}";//crear sesión
     } else if (strcasecmp($msj,'Profesor')==0){
         $_SESSION["emailsesion"] = $mail;	

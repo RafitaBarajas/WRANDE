@@ -4,16 +4,17 @@
 
     $index = $_POST["numItemsDisplayed"];
 
-
     $sql = "call sp_obtenerCorreos();";
     $respuesta = mysqli_query($conexion,$sql);
     $registros=mysqli_affected_rows($conexion);
-
-    $array = array();
+    
     $j=0;
-    while ($filas = mysqli_fetch_array($respuesta)) {
-    	$array[]=$filas["email"];
+    while ($j<$registros) {
+        $filas = mysqli_fetch_array($respuesta);
+    	$array[$j]=$filas["email"];
+        $j++;
     }
+                
 
     if($registros==0){
     	echo "</div>";
@@ -23,23 +24,31 @@
     }
     else{
     	$cantidadDesplegar=6;
-        $restantes=$registros-1-$index;
+        $restantes=$registros-$index;
+        
         if($restantes !=0){
             $max=0;
+
             if($restantes>$cantidadDesplegar)
                 $max=$cantidadDesplegar;
             else
                 $max=$restantes;
 
-                for ($i=$index+1; $i <= ($max+$index); $i++) {
-                
-                    
+                for ($i=$index; $i < ($max+$index); $i++) {
+                    echo "<tr class=\"generated\">";
+                    echo "<td>$array[$i]</td>";
+                    echo "<td></td>";
+                    echo "<td><button class=\"btn-flat ver\" data-correo=\"$array[$i]\"><i class=\"fas fa-eye\"></i></button></td>";
+                    echo "<td><button class=\"btn-flat editar\" data-correo=\"$array[$i]\"><i class=\"fas fa-edit\"></i></button></td>";
+                    echo "<td><button class=\"btn-flat generar\" data-correo=\"$array[$i]\"><i class=\"fas fa-file-pdf\"></i></button></td>";
+                    echo "<td><button class=\"btn-flat borrar\" data-correo=\"$array[$i]\"><i class=\"fas fa-times\"></i></button></td>";
+                    echo "</tr>";
                 }
-                if(max==cantidadDesplegar){
-                    out.println("<input type='hidden' data-continue='true' id='continue'>");    
+                if($max==$cantidadDesplegar){
+                    echo "<input type='hidden' data-continue='true' id='continue'>";    
                 }
                 else{
-                    out.println("<input type='hidden' data-continue='false' id='continue'>");
+                    echo"<input type='hidden' data-continue='false' id='continue'>";
                 }
 
         }
