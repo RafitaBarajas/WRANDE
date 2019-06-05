@@ -11,10 +11,10 @@ $(document).ready(function(){
                         var myChart = new Chart(ctx, {
                             type: 'bar',
                             data: {
-                                labels: [Jresp[0].nivel, Jresp[1].nivel, Jresp[2].nivel, Jresp[3].nivel],
+                                labels: [Jresp[0].nivel, Jresp[1].nivel],
                                 datasets: [{
                                     label: 'Registros',
-                                    data: [Jresp[0].cantidad, Jresp[1].cantidad, Jresp[2].cantidad, Jresp[3].cantidad],
+                                    data: [Jresp[0].cantidad, Jresp[1].cantidad],
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',

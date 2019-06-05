@@ -13,7 +13,12 @@
     $contra = trim($_POST["contra"]);
     $acontra = trim($_POST["acontra"]);
     
-    $amail = trim($_SESSION["emailsesion"]);
+    if(strcasecmp($_SESSION["tipo"],'user')==0){
+            $amail = trim($_SESSION["emailsesion"]);
+        }
+       else{
+            $amail = trim($_POST["email"]);
+        }
 
 
     $sql = "call sp_editar('$nom','$apa', '$ama', '$bd', '$puesto', '$email', '$contra', '$acontra', '$amail');";

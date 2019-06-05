@@ -3,7 +3,12 @@
     $conexion = mysqli_connect("localhost","root","n0m3l0","cero");
     mysqli_query($conexion, "SET NAMES 'utf8'"); 
 
-    $mail = $_SESSION["emailsesion"];
+    if(strcasecmp($_SESSION["tipo"],'user')==0){
+            $mail = trim($_SESSION["emailsesion"]);
+        }
+       else{
+            $mail = trim($_GET["email"]);
+        }
 
     $sql = "call sp_obtenerDatos('$mail')";
     $respuesta = mysqli_query($conexion,$sql);

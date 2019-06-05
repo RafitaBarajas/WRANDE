@@ -14,7 +14,7 @@ $(document).ready(function(){
 		            data: $("form#formEdit").serialize(),
 		            cache: false,
 		            success:function(resp){
-		            	alert(resp);
+		            	//alert(resp);
 		                var Jresp=$.parseJSON(resp);
 		                if(Jresp["estado"]=="1"){
 		                    $.alert({
@@ -66,7 +66,7 @@ $(document).ready(function(){
 		                            },
 		                        },
 		                        onDestroy: function () {
-		                        	$(location).attr('href',"principal.html");
+		                        	$(location).attr('href',"perfil.html");
     							}
 		                    });
 

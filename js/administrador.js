@@ -5,11 +5,66 @@ $(document).ready(function(){
     });
 
     $(document).on("click",".editar",function(){
+        var butto= $(this).attr("data-correo");
+        var elemento=$(this).closest("tr");
+        $.ajax({
+                            method:"post",
+                            url:"editar.html",
+                            data: "email="+butto,
+                            cache:false
+                            
+                                
+                                
+                            });
+                   
         
+      
     });
 
     $(document).on("click",".generar",function(){
-            
+        var butto= $(this).attr("data-correo");
+        var elemento=$(this).closest("tr");
+        $.ajax({
+                            method:"post",
+                            url:"php/pruebaPDF.php",
+                            data: "email="+butto,
+                            cache:false,
+                            success:function(resp){
+                                $.alert({
+                                title: 'PDF guardado en C:\\wamp64\\www\\WRANDE',
+                                type: 'orange',
+                                content: '',
+                                icon: 'fas fa-globe',
+                                theme: 'material',
+                                useBootstrap: false,
+                                boxWidth: '400px',
+                                buttons: {
+                                    Ok:{
+                                        text: 'Ok',
+                                        btnClass: 'btn-red',
+                                    },
+                                },
+                                
+                            });
+                   
+        },
+        error:function(){
+            $.alert({
+                title: 'Error en el servidor, int&eacute;ntelo m&aacute;s tarde',
+                content: '',
+                boxWidth: '400px',
+                type: 'orange',
+                theme: 'material',
+                useBootstrap: false,
+                buttons: {
+                    Entendido:{
+                        text: 'Entendido',
+                        btnClass: 'btn-red',
+                    },
+                }
+            });
+        }
+    });
     });
 
     $(document).on("click",".borrar",function(){

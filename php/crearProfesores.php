@@ -38,8 +38,6 @@
                     echo "<tr class=\"generated\">";
                     echo "<td>$array[$i]</td>";
                     echo "<td></td>";
-                    echo "<td><button class=\"btn-flat ver\" data-correo=\"$array[$i]\"><i class=\"fas fa-eye\"></i></button></td>";
-                    echo "<td><button class=\"btn-flat editar\" data-correo=\"$array[$i]\"><i class=\"fas fa-edit\"></i></button></td>";
                     echo "<td><button class=\"btn-flat generar\" data-correo=\"$array[$i]\"><i class=\"fas fa-file-pdf\"></i></button></td>";
                     echo "<td><button class=\"btn-flat borrar\" data-correo=\"$array[$i]\"><i class=\"fas fa-times\"></i></button></td>";
                     echo "</tr>";

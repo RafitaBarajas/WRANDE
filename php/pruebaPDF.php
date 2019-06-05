@@ -7,13 +7,12 @@
 
         $emailusr = "";
         session_start();
-        $_SESSION["emailsesion"] = "asd@asd.asd";
-       // if(isset($_SESSION["emailsesion"]){
+       if(strcasecmp($_SESSION["tipo"],'user')==0){
             $emailusr = trim($_SESSION["emailsesion"]);
-        //}
-       // else{
-        //    $emailusr = trim($POST["emailprofesor"]);
-        //}
+        }
+       else{
+            $emailusr = trim($_POST["email"]);
+        }
 
         $mpdf=new mPDF("c","Letter","12","tahoma",15,10,30,10,5,5);
         
@@ -21,6 +20,7 @@
 
         $header = "";
         $header .= "<p align='center'><strong>Currículum Vitae resumido</strong></p>";
+        header('Content-Type: application/pdf');
         $estilos = "";
         $estilos .= "<style>
             .logo{width: 150px; position:absolute; float: right;}
@@ -249,6 +249,13 @@
         $mpdf->SetHTMLFooter($pie);
 
 
-        $mpdf->Output();
+        
+        if(strcasecmp($_SESSION["tipo"],'user')==0){
+            $mpdf->Output();
+            header('Location: ./../principal.html');
+        }
+        else{
+            $mpdf->Output("./../cedula0.pdf");
+        }
 
 ?>

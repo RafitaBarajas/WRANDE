@@ -90,7 +90,7 @@
 		      		<li><a href="#" id="btn-user-nav" data-target="sidenav-user" class="sidenav-trigger"><i class="fas nav-fas fa-user"></i></a></li>
 		      	  </ul>
 
-			      <a href="login.html" class="brand-logo center">
+			      <a  class="brand-logo center">
 			      	<img src="https://drive.google.com/uc?id=1lM9nUqmsL9CI4pGcCSx2NM3H3TOdSuT-" class = "responsive-img" id = "logo">
 			      </a>
 
@@ -142,6 +142,9 @@
 		                </a>
 		                <a href="#" class="list-group-item text-left">
 		                  <i class="fas tab-fas fa-user-tie"></i>Datos Institucionales
+		                </a>
+		                <a href="#" class="list-group-item text-left">
+		                  <i class="fas tab-fas fa-file-pdf"></i>Generar PDF
 		                </a>
 		              </div>
 		            </div>
@@ -2036,6 +2039,23 @@
 									<div class="col s12 m12 l12 center-align">
 					            		<button class="btn-large waves-effect waves-light" type="submit" name="action">Guardar Datos
 										    <i class="fas fa-save"></i>
+										</button>
+					            	</div>
+								</div>
+		                    </form>
+
+		                </div>
+
+
+		                <!-- Generar PDF -->
+		                <div class="bhoechie-tab-content">
+		                    <h1>Generar PDF</h1>
+
+		                    <form action="php/pruebaPDF.php" autocomplete="off" id="formPart">
+		                    	<div class="row">
+									<div class="col s12 m12 l12 center-align">
+					            		<button class="btn-large waves-effect waves-light" type="submit" name="action">Generar PDF
+										    <i class="fas fa-file-pdf"></i>
 										</button>
 					            	</div>
 								</div>

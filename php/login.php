@@ -16,9 +16,11 @@
 
     if(strcasecmp($msj,'Administrador')==0){
         $_SESSION["emailadministrador"] = $mail;
+        $_SESSION["tipo"] = "admin";
     	echo "{\"estado\": \"1\"}";//crear sesión
     } else if (strcasecmp($msj,'Profesor')==0){
-        $_SESSION["emailsesion"] = $mail;	
+        $_SESSION["emailsesion"] = $mail;
+        $_SESSION["tipo"] = "user";
     	echo "{\"estado\": \"2\"}";//crear sesión
     } else if(strcasecmp($msj,'Usuario no encontrado')==0){
     	echo "{\"estado\": \"0\"}";

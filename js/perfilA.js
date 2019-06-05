@@ -8,7 +8,7 @@ $(document).ready(function(e){
                 var Jresp=$.parseJSON(resp);
 
                 var nom = "";
-                var ncomp = nom.concat(Jresp["nombre"],Jresp["apaterno"],Jresp["amaterno"]);
+                var ncomp = nom.concat(Jresp["nombre"]," ",Jresp["apaterno"]," ", Jresp["amaterno"]);
 
                 $("h4.nombre").text(ncomp);
                 $("h4.edad").text(Jresp["edad"]);
