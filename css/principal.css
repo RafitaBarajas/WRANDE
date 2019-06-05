@@ -201,8 +201,12 @@ button.btn-large{
   }
 }
 
-h3{
+h3, h5{
   color: #00adb5;
+}
+
+h5{
+  padding-left: 6%;
 }
 
 @media only screen and (max-width: 992px){
