@@ -13,7 +13,6 @@ $(document).ready(function() {
 	  				associativeArrays: true,
 				});
 				var jsonString = JSON.stringify(obj);
-				alert(jsonString);
 		        if ($("form#formGest").find('option[disabled]:selected').length == 0) {
 		        	$.ajax({
 			            method:"post",
@@ -38,7 +37,14 @@ $(document).ready(function() {
 			                            },
 			                        },
 			                        onDestroy: function () {
-			                        	//$(location).attr('href',"principal.html");
+			                        	var index =$("div.bhoechie-tab-menu>div.list-group>a.active").index();
+			                        	$("a.list-group-item.text-left.active").removeClass("active");
+			                        	$("a.list-group-item.text-left").eq(index+1).addClass("active");
+			                        	$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+		    							$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index+1).addClass("active");
+		    							$('#formGest').find('input, textarea, button, select').attr('disabled','disabled');
+		    							$('#formGest').find('.fa-plus').hide();
+		    							$('#formGest').find('.fa-minus').hide();
 	    							}
 			                    });
 			                }  

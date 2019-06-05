@@ -37,7 +37,9 @@ $(document).ready(function() {
 			                            },
 			                        },
 			                        onDestroy: function () {
-			                        	//$(location).attr('href',"principal.html");
+		    							$('#formExpP').find('input, textarea, button, select').attr('disabled','disabled');
+		    							$('#formExpP').find('.fa-plus').hide();
+		    							$('#formExpP').find('.fa-minus').hide();
 	    							}
 			                    });
 			                } 

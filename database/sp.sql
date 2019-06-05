@@ -245,7 +245,7 @@ delimiter ;
 
 drop procedure if exists sp_DatosInst;
 delimiter **
-create procedure sp_DatosInst(cc nvarchar(3),in tc nvarchar(3), in fc date, in ins nvarchar(30), in fins date, in idl15 nvarchar(30), 
+create procedure sp_DatosInst(cc nvarchar(3),in tc nvarchar(3), in fc nvarchar(20), in ins nvarchar(30), in fins nvarchar(20), in idl15 nvarchar(30), 
 							  in hrsl15 int(3), in idp15 nvarchar(30), in hrsp15 int(3), in tip15 nvarchar(3), in idl16 nvarchar(30), in hrsl16 int(3), 
                               in idp16 nvarchar(30), in hrsp16 int(3), in tip16 nvarchar(3), in mail nvarchar(40))
 begin

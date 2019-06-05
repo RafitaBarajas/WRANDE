@@ -36,7 +36,14 @@ $(document).ready(function() {
 			                            },
 			                        },
 			                        onDestroy: function () {
-			                        	//$(location).attr('href',"principal.html");
+			                        	var index =$("div.bhoechie-tab-menu>div.list-group>a.active").index();
+			                        	$("a.list-group-item.text-left.active").removeClass("active");
+			                        	$("a.list-group-item.text-left").eq(index+1).addClass("active");
+			                        	$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+		    							$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index+1).addClass("active");
+		    							$('#formPart').find('input, textarea, button, select').attr('disabled','disabled');
+		    							$('#formPart').find('.fa-plus').hide();
+		    							$('#formPart').find('.fa-minus').hide();
 	    							}
 			                    });
 			                }  

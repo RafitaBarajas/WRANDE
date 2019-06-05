@@ -76,6 +76,7 @@ $(document).ready(
 			}
 
 			clon.find("select").addClass("newSelect");
+			clon.find(".counter").characterCounter();
 
 			clon.appendTo("#baseExpP").show();
 
@@ -108,6 +109,8 @@ $(document).ready(
 			} else {
 				clon.find("i.fa-plus").attr("id", "moreExpD");
 			}
+
+			clon.find(".counter").characterCounter();
 
 			clon.appendTo("#baseExpD").show();
 		}

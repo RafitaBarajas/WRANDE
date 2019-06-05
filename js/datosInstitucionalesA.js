@@ -21,6 +21,7 @@ $(document).ready(function() {
 			            data: {string: jsonString},
 			            cache:false,
 			            success:function(resp){
+			            	alert(resp);
 			                var Jresp=$.parseJSON(resp);
 			                if(Jresp["estado"]=="1"){
 			                    $.alert({
@@ -38,7 +39,9 @@ $(document).ready(function() {
 			                            },
 			                        },
 			                        onDestroy: function () {
-			                        	//$(location).attr('href',"principal.html");
+		    							$('#formDatos').find('input, textarea, button, select').attr('disabled','disabled');
+		    							$('#formDatos').find('.fa-plus').hide();
+		    							$('#formDatos').find('.fa-minus').hide();
 	    							}
 			                    });
 			                }  
