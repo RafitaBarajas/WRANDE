@@ -44,6 +44,7 @@
 	<script type="text/javascript" src="js/logroPremio.js"></script>
 	<script type="text/javascript" src="js/membresia.js"></script>
 	<script type="text/javascript" src="js/participacion.js"></script>
+	<script type="text/javascript" src="js/datosInstitucionales.js"></script>
 	<script type="text/javascript" src="js/nvBar.js"></script>
 
 </head>
@@ -1863,14 +1864,149 @@
 		                <div class="bhoechie-tab-content">
 		                    <h1>Datos Institucionales</h1>
 
-		                    <form action="?acc=1" method="POST" id="formPart">
-		                    	<div class="col s10 m10 l10 offset-l1 offset-s1 offset-m1">
-		                    		<div class="input-field">
-					                  <i class="prefix fas fa-hands-helping"></i>
-					                  <textarea id="descPart0" name="descPart0" type="text" class="materialize-textarea counter" data-validetta="required,maxLength[200]" data-length="200"></textarea> 
-					                  <label for="descPart0">Descripción del Logro</label>
-					                </div>
-		                    	</div>
+		                    <form action="?acc=1" method="POST" id="formDatos">
+		                    	<h5>Contratación Actual</h5>
+
+		                    	<div class="row">
+			                    	<div class="input-field col l4 m8 s8 offset-s2 offset-m2 offset-l1">
+									    <select class="datosSelect" id="datosCContra" name="datosCContra">
+									      <option value="" disabled selected>Elige una Opción</option>
+									      <option value="PTC">Profesor de Tiempo Completo</option>
+									      <option value="PMT">Profesor de Medio Tiempo</option>
+									      <option value="PPH">Profesor por Horas</option>
+									      <option value="PDA">Profesor de Asignatura</option>
+									      <option value="OTR">Otro</option>
+									    </select>
+									    <label>Categoría de Contratación</label>
+									</div>
+
+									<div class="input-field col l3 m8 s8 offset-s2 offset-m2">
+									    <select class="datosSelect" id="datosTContra" name="datosTContra">
+									      <option value="" disabled selected>Elige una Opción</option>
+									      <option value="DEF">Definitivo o con Base</option>
+									      <option value="EST">En periodo de Estabilidad</option>
+									      <option value="COB">Por Contrato</option>
+									      <option value="PDA">Por Honorarios</option>
+									      <option value="OTR">Otro</option>
+									    </select>
+									    <label>Tipo de Contratación</label>
+									</div>
+
+									<div class="col s8 m8 l3 offset-s2 offset-m2">
+						        		<div class="input-field">
+						        		  <i class="prefix fas fa-calendar-alt"></i>
+						        		  <input id="fecha" name="fecha" type="text" class="datepicker" data-validetta="required">
+						                  <label for="fecha">Fecha de Contratación</label>
+						                </div>
+						        	</div>
+					        	</div>
+
+					        	<h5>Instancias</h5>
+
+					        	<div class="row">
+					        		<div class="col l5 m10 s10 offset-m1 offset-s1 offset-l1">
+										<div class="input-field">
+						                  <i class="prefix fas fa-briefcase"></i>
+						                  <input id="datosInstancias" name="datosInstancias" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+						                  <label for="datosInstancias">Nombre de las Instancias</label>
+						                </div>
+									</div>
+									<div class="col l5 m10 s10 offset-m1 offset-s1">
+										<div class="input-field">
+						                  <i class="prefix fas fa-calendar-day"></i>
+						                  <input id="datosFInst" name="datosFInst" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+						                  <label for="datosFInst">Fecha cuando se formó parte</label>
+						                </div>
+									</div>
+					        	</div>
+
+					        	<h5>Cursos Impartidos Periodo Escolar 2014-2015</h5>
+
+					        	<div class="row">
+					        		<div class="col l6 m8 s8 offset-m2 offset-s2 offset-l1">
+										<div class="input-field">
+						                  <i class="prefix fas fa-digital-tachograph"></i>
+						                  <input id="datosidLIC15" name="datosidLIC15" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+						                  <label for="datosidLIC15">Clave curso de Licenciatura</label>
+						                </div>
+									</div>
+									<div class="col l4 m8 s8 offset-m2 offset-s2">
+										<div class="input-field">
+						                  <i class="prefix fas fa-clock"></i>
+						                  <input id="datoshrsLIC15" name="datoshrsLIC15" type="text" class="validate counter" data-validetta="required,maxLength[3]" data-length="3">
+						                  <label for="datoshrsLIC15">Horas Totales del Curso</label>
+						                </div>
+									</div>
+									<div class="col l6 m8 s8 offset-m2 offset-s2 offset-l1">
+										<div class="input-field">
+						                  <i class="prefix fas fa-digital-tachograph"></i>
+						                  <input id="datosidPOS15" name="datosidPOS15" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+						                  <label for="datosidPOS15">Clave curso de Posgrado</label>
+						                </div>
+									</div>
+									<div class="col l4 m8 s8 offset-m2 offset-s2">
+										<div class="input-field">
+						                  <i class="prefix fas fa-clock"></i>
+						                  <input id="datoshrsPOS15" name="datoshrsPOS15" type="text" class="validate counter" data-validetta="required,maxLength[3]" data-length="3">
+						                  <label for="datoshrsPOS15">Horas Totales del Curso</label>
+						                </div>
+									</div>
+
+									<div class="input-field col l6 m8 s8 offset-s2 offset-m2 offset-l3">
+									    <select class="datosSelect" id="datosTipo15" name="datosTipo15">
+									      <option value="" disabled selected>Elige una Opción</option>
+									      <option value="ECO">Educación Continua</option>
+									      <option value="OTR">Otro</option>
+									    </select>
+									    <label>Tipo de Curso</label>
+									</div>
+					        	</div>
+
+					        	<h5>Cursos Impartidos Periodo Escolar 2015-2016</h5>
+
+					        	<div class="row">
+					        		<div class="col l6 m8 s8 offset-m2 offset-s2 offset-l1">
+										<div class="input-field">
+						                  <i class="prefix fas fa-digital-tachograph"></i>
+						                  <input id="datosidLIC16" name="datosidLIC16" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+						                  <label for="datosidLIC16">Clave curso de Licenciatura</label>
+						                </div>
+									</div>
+									<div class="col l4 m8 s8 offset-m2 offset-s2">
+										<div class="input-field">
+						                  <i class="prefix fas fa-clock"></i>
+						                  <input id="datoshrsLIC16" name="datoshrsLIC16" type="text" class="validate counter" data-validetta="required,maxLength[3]" data-length="3">
+						                  <label for="datoshrsLIC16">Horas Totales del Curso</label>
+						                </div>
+									</div>
+									<div class="col l6 m8 s8 offset-m2 offset-s2 offset-l1">
+										<div class="input-field">
+						                  <i class="prefix fas fa-digital-tachograph"></i>
+						                  <input id="datosidPOS16" name="datosidPOS16" type="text" class="validate counter" data-validetta="required,maxLength[30]" data-length="30">
+						                  <label for="datosidPOS16">Clave curso de Posgrado</label>
+						                </div>
+									</div>
+									<div class="col l4 m8 s8 offset-m2 offset-s2">
+										<div class="input-field">
+						                  <i class="prefix fas fa-clock"></i>
+						                  <input id="datoshrsPOS16" name="datoshrsPOS16" type="text" class="validate counter" data-validetta="required,maxLength[3]" data-length="3">
+						                  <label for="datoshrsPOS16">Horas Totales del Curso</label>
+						                </div>
+									</div>
+
+									<div class="input-field col l6 m8 s8 offset-s2 offset-m2 offset-l3">
+									    <select class="datosSelect" id="datosTipo16" name="datosTipo16">
+									      <option value="" disabled selected>Elige una Opción</option>
+									      <option value="ECO">Educación Continua</option>
+									      <option value="OTR">Otro</option>
+									    </select>
+									    <label>Tipo de Curso</label>
+									</div>
+					        	</div>
+
+					        	<div class="row">
+					        		
+					        	</div>
 
 		                    	<div class="row">
 									<div class="col s12 m12 l12 center-align">
@@ -1880,7 +2016,7 @@
 					            	</div>
 								</div>
 		                    </form>
-		                    
+
 		                </div>
 
 		            </div>
