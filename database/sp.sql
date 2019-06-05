@@ -133,7 +133,7 @@ delimiter ;
 
 drop procedure if exists sp_FAcademica;
 delimiter **
-create procedure sp_FAcademica(in nom nvarchar(30), in niv nvarchar(30), in inst nvarchar(40), in p nvarchar(30), in a date, in ced nvarchar(30), in mail nvarchar(40))
+create procedure sp_FAcademica(in nom nvarchar(30), in niv nvarchar(30), in inst nvarchar(40), in p nvarchar(30), in a nvarchar(4), in ced nvarchar(30), in mail nvarchar(40))
 begin
 	declare msj nvarchar(60); 
     declare id int;
@@ -149,7 +149,7 @@ delimiter ;
 
 drop procedure if exists sp_CapAct;
 delimiter **
-create procedure sp_CapAct(in ca nvarchar(1), in tip nvarchar(20), in inst nvarchar(40), in p nvarchar(30), in a date, in hrs int, in mail nvarchar(40))
+create procedure sp_CapAct(in ca nvarchar(1), in tip nvarchar(20), in inst nvarchar(40), in p nvarchar(30), in a nvarchar(4), in hrs int, in mail nvarchar(40))
 begin
 	declare msj nvarchar(60); 
     declare id int;

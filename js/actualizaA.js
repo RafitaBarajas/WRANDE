@@ -17,7 +17,7 @@ $(document).ready(function() {
 		        	$.ajax({
 			            method:"post",
 			            url:"php/actualizacion.php",
-			            data: jsonString,
+			            data: {string:jsonString},
 			            cache:false,
 			            success:function(resp){
 			                var Jresp=$.parseJSON(resp);
@@ -40,7 +40,7 @@ $(document).ready(function() {
 			                        	//$(location).attr('href',"principal.html");
 	    							}
 			                    });
-			                }  
+			                } 
 			            },
 			            error:function(){
 			                $.alert({
