@@ -279,9 +279,10 @@ drop procedure if exists sp_obtenerDatos;
 delimiter **
 create procedure sp_obtenerDatos(in mail nvarchar(30))
 begin
-	select nombre, apaterno, amaterno, DATE_FORMAT(fnac,'%d/%m/%Y'), puesto, email from datos;
+	select nombre, apaterno, amaterno, DATE_FORMAT(fnac,'%d/%m/%Y') as fnac, puesto, email from datos where email = mail;
 end**
 delimiter ;
+
 
 drop procedure if exists sp_obtenerCorreos;
 delimiter **
@@ -292,9 +293,13 @@ end**
 delimiter ;
 
 
-
-
-
+drop procedure if exists sp_datosPerfil;
+delimiter **
+create procedure sp_datosPerfil(in mail nvarchar(30))
+begin
+	select nombre, apaterno, amaterno, YEAR(CURDATE())-YEAR(fnac) + IF(DATE_FORMAT(CURDATE(),'%m-%d') > DATE_FORMAT(fnac,'%m-%d'), 0 , -1 ) AS edad, puesto, email from datos where email = mail;
+end**
+delimiter ;
 
 
 

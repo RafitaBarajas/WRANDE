@@ -19,6 +19,8 @@
     }
 
     if(strcasecmp($msj,'Has sido registrado')==0){
+        session_start();
+        $_SESSION["emailsesion"] = $email;
     	echo "{\"estado\": \"1\"}";//crear sesión
     } else if (strcasecmp($msj,'Este correo ya está registrado')==0){	
     	echo "{\"estado\": \"2\"}";

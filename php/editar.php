@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $conexion = mysqli_connect("localhost","root","","cero");
     mysqli_query($conexion, "SET NAMES 'utf8'"); 
  
@@ -11,7 +13,7 @@
     $contra = trim($_POST["contra"]);
     $acontra = trim($_POST["acontra"]);
     
-    $amail = "d@d.d";  //SESION SESION SESION SESION
+    $amail = trim($_SESSION["emailsesion"]);
 
 
     $sql = "call sp_editar('$nom','$apa', '$ama', '$bd', '$puesto', '$email', '$contra', '$acontra', '$amail');";
