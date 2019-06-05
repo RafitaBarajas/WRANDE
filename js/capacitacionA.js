@@ -17,9 +17,10 @@ $(document).ready(function() {
 		        	$.ajax({
 			            method:"post",
 			            url:"php/capacitacion.php",
-			            data: jsonString,
+			            data: {string:jsonString},
 			            cache:false,
 			            success:function(resp){
+			            	alert(resp);
 			                var Jresp=$.parseJSON(resp);
 			                if(Jresp["estado"]=="1"){
 			                    $.alert({
@@ -40,7 +41,7 @@ $(document).ready(function() {
 			                        	//$(location).attr('href',"principal.html");
 	    							}
 			                    });
-			                }  
+			                } 
 			            },
 			            error:function(){
 			                $.alert({

@@ -42,7 +42,7 @@ create table CapAct
     tipo nvarchar(20) not null,
     institucion nvarchar(40) not null,
     pais nvarchar(30) not null,
-    anio date,
+    anio nvarchar(4) not null,
     horas int not null,
     foreign key(idprof) references Datos(idprof) on delete cascade on update cascade
 );
