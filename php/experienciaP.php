@@ -20,7 +20,7 @@
          $mesA = $DatosJSON["mesAExpP".$i];
          $añoA =$DatosJSON["yrAExpP".$i];
           //echo $puesto."-".$ins."-".$mesD."-".$añoD."-".$mesA."-".$añoA."-".$mail."---------------";
-          $sql = "call sp_GestAExpP('A','$puesto','$ins','$mesD','$añoD','$mesA','$añoA','$mail')";
+          $sql = "call sp_GestAExpP('E','$puesto','$ins','$mesD','$añoD','$mesA','$añoA','$mail')";
 
           $respuesta = mysqli_query($conexion,$sql);
           if($filas = mysqli_fetch_array($respuesta)){
