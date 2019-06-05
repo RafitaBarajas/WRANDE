@@ -300,7 +300,138 @@ begin
 end**
 delimiter ;
 
+drop procedure if exists sp_verificarFAcademica;
+delimiter **
+create procedure sp_verificarFAcademica(in mail nvarchar(30))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from FAcademica where idprof = (select idprof from datos where email = mail));
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
 
+drop procedure if exists sp_verificarCapAct;
+delimiter **
+create procedure sp_verificarCapAct(in mail nvarchar(30), in tipo nvarchar(1))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from CapAct where idprof = (select idprof from datos where email = mail) and coa =tipo);
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
 
+drop procedure if exists sp_verificarGestAExpP;
+delimiter **
+create procedure sp_verificarGestAExpP(in mail nvarchar(30), in tipo nvarchar(1))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from GestAExpP where idprof = (select idprof from datos where email = mail) and goe = tipo);
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
 
+drop procedure if exists sp_verificarPro;
+delimiter **
+create procedure sp_verificarPro(in mail nvarchar(30))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from productos where idprof = (select idprof from datos where email = mail));
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
 
+drop procedure if exists sp_verificarEIM;
+delimiter **
+create procedure sp_verificarEIM(in mail nvarchar(30), in tipo nvarchar(1))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from ExpIngMemb where idprof = (select idprof from datos where email = mail) and eom = tipo);
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
+
+drop procedure if exists sp_verificarLP;
+delimiter **
+create procedure sp_verificarLP(in mail nvarchar(30), in tipo nvarchar(1))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from LogrosPrem where idprof = (select idprof from datos where email = mail) and lop = tipo);
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
+
+drop procedure if exists sp_verificarPE;
+delimiter **
+create procedure sp_verificarPE(in mail nvarchar(30))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from PArtPE where idprof = (select idprof from datos where email = mail));
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
+
+drop procedure if exists sp_verificarDI;
+delimiter **
+create procedure sp_verificarDI(in mail nvarchar(30))
+ begin
+ 	declare registros int;
+     declare msj nvarchar(20);
+     
+ 	set registros=(select count(*) from DatosInst where idprof = (select idprof from datos where email = mail));
+     if registros=0 then
+ 		set msj="No contestado";
+     else
+ 		set msj="Contestado";
+     end if;
+     select msj as MSJ;
+ end **
+delimiter ;
