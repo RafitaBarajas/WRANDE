@@ -13,7 +13,6 @@ $(document).ready(function() {
 	  				associativeArrays: true,
 				});
 				var jsonString = JSON.stringify(obj);
-				alert(jsonString);
 		        	$.ajax({
 			            method:"post",
 			            url:"php/productos.php",
@@ -21,7 +20,7 @@ $(document).ready(function() {
 			            cache:false,
 			            success:function(resp){
 			                var Jresp=$.parseJSON(resp);
-			                if(Jresp["estado"]=="1"){
+			               if(Jresp["estado"]=="1"){
 			                    $.alert({
 			                        title: 'Secci&oacute;n completada',
 			                        type: 'orange',

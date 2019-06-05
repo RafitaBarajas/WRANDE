@@ -19,6 +19,7 @@ $(document).ready(function() {
 			            data: {string: jsonString},
 			            cache:false,
 			            success:function(resp){
+			            	alert(resp);
 			                var Jresp=$.parseJSON(resp);
 			                if(Jresp["estado"]=="1"){
 			                    $.alert({

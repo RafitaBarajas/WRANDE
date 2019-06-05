@@ -13,7 +13,6 @@ $(document).ready(function() {
 	  				associativeArrays: true,
 				});
 				var jsonString = JSON.stringify(obj);
-				alert(jsonString);
 		        	$.ajax({
 			            method:"post",
 			            url:"php/experienciaDI.php",

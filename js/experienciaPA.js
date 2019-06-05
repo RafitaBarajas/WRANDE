@@ -13,7 +13,6 @@ $(document).ready(function() {
 	  				associativeArrays: true,
 				});
 				var jsonString = JSON.stringify(obj);
-
 		        if ($("form#formExpP").find('option[disabled]:selected').length == 0) {
 		        	$.ajax({
 			            method:"post",
@@ -21,6 +20,7 @@ $(document).ready(function() {
 			            data:{string: jsonString},
 			            cache:false,
 			            success:function(resp){
+			            	alert(jsonString);
 			                var Jresp=$.parseJSON(resp);
 			                if(Jresp["estado"]=="1"){
 			                    $.alert({
@@ -41,7 +41,7 @@ $(document).ready(function() {
 			                        	//$(location).attr('href',"principal.html");
 	    							}
 			                    });
-			                }  
+			                } 
 			            },
 			            error:function(){
 			                $.alert({

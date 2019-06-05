@@ -5,7 +5,7 @@
    $DatosJSON = json_decode($_POST["string"], true);
 
    $total = count($DatosJSON);
-   $registros = $total/5;
+   $registros = $total/6;
    $msj = "";
 
    for ($i = 1; $i <= $registros; $i++) {
