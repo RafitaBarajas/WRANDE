@@ -42,6 +42,7 @@
 	<script type="text/javascript" src="js/productos.js"></script>
 	<script type="text/javascript" src="js/experiencia.js"></script>
 	<script type="text/javascript" src="js/logroPremio.js"></script>
+	<script type="text/javascript" src="js/membresia.js"></script>
 	<script type="text/javascript" src="js/nvBar.js"></script>
 
 </head>
@@ -1788,7 +1789,49 @@
 
 		                <!-- Membresías o Participaciones -->
 		                <div class="bhoechie-tab-content">
-		                    <h1>Membresías o Participaciones</h1>
+		                    <h1>Membresías o Participaciones <i class="fas fa-info-circle" id="infoMemb"></i></h1>
+
+		                    <div id="rowMemb">
+		                    	<div class="col l10 m10 s10 offset-m1 offset-s1 offset-l1">
+									<div class="input-field">
+					                  <i class="prefix fas fa-building"></i>
+					                  <input id="orgMemb0" name="orgMemb0" type="text" class="validate counter" data-validetta="required,maxLength[40]" data-length="40">
+					                  <label for="orgMemb0">Organismo</label>
+					                </div>
+								</div>
+								<div class="col l3 m10 s10 offset-m1 offset-s1 offset-l1">
+									<div class="input-field">
+					                  <i class="prefix fas fa-hourglass-half"></i>
+					                  <input id="perMemb0" name="perMemb0" type="text" class="validate counter" data-validetta="required,maxLength[2]" data-length="2">
+					                  <label for="perMemb0">Periodo (años)</label>
+					                </div>
+								</div>
+								<div class="col l6 m9 s9 offset-m1 offset-s1 margen">
+									<div class="input-field">
+					                  <i class="prefix fas fa-chart-bar"></i>
+					                  <input id="nvlMemb0" name="nvlMemb0" type="text" class="validate counter" data-validetta="required,maxLength[20]" data-length="20">
+					                  <label for="nvlMemb0">Nivel de Participación</label>
+					                </div>
+								</div>
+
+		                    	<div class="col s1 m1 l1 delMemb">
+	                            	<i class="fas fa-plus"></i>
+	                            </div>
+		                    </div>
+
+		                    <form action="?acc=1" method="POST" id="formMemb">
+		                    	<div class="row center-align" id="baseMemb">
+		                    	</div>
+
+		                    	<div class="row">
+									<div class="col s12 m12 l12 center-align">
+					            		<button class="btn-large waves-effect waves-light" type="submit" name="action">Guardar Datos
+										    <i class="fas fa-save"></i>
+										</button>
+					            	</div>
+								</div>
+		                    </form>
+
 		                </div>
 
 		                <!-- Participación en PE -->
