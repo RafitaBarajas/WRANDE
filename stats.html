@@ -37,9 +37,9 @@
 	<link href="css/foot.css" rel="stylesheet">
     <link href="css/confirm.css" rel="stylesheet">
 
-    <script type="text/javascript" src="js/administradorA.js"></script>
-	<script type="text/javascript" src="js/administrador.js"></script>
 	<script type="text/javascript" src="js/verificarSesionAdmin.js"></script>
+	<script src="libs/chart/Chart.min.js"></script>
+	<script src="libs/chart/Chart.css"></script>
 
 </head>
 <body>
@@ -78,21 +78,35 @@
 			</nav>
 		</div>
 		<div class="my_container">
-		<div class="section"><h3 class="header left-align">Profesores Registrados</h3></div>
+		<div class="section"><h3 class="header left-align">Datos</h3></div>
 		<hr class="sound_waves-text">
-		<div class="section items">
-            <div class="row content">
-            	<div class="col s12 m12 l12">
-                    <table class="highlight">
-		        		<tbody>
-                            <tr class="scrollCreator">
-                            </tr>
-						</tbody>
-                    </table>
-            	</div>
-            </div>
 		</div>
+		<div class="my_container2">
+		<div class="section"><h4 class="header left-align">Formación Académica</h4></div>
+		<canvas id="chartFA" width="400" height="300"></canvas>
 		</div>
+		
+		<div class="my_container2">
+		<div class="section"><h4 class="header left-align">Formación Académica</h4></div>
+		<canvas id="chartFA" width="400" height="300"></canvas>
+		</div>
+
+		<div class="my_container2">
+		<div class="section"><h4 class="header left-align">Formación Académica</h4></div>
+		<canvas id="chartFA" width="400" height="300"></canvas>
+		</div>
+
+		<div class="my_container2">
+		<div class="section"><h4 class="header left-align">Formación Académica</h4></div>
+		<canvas id="chartFA" width="400" height="300"></canvas>
+		</div>
+
+		<div class="my_container2">
+		<div class="section"><h4 class="header left-align">Formación Académica</h4></div>
+		<canvas id="chartFA" width="400" height="300"></canvas>
+		</div>
+
+
 </main>
 
 <footer class="page-footer">
@@ -133,6 +147,6 @@
           </div>
 
 	</footer>
-
+	<script type="text/javascript" src="js/stats.js"></script>
 </body>
 </html>
