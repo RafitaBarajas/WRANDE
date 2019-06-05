@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$("form#formFA").validetta({
+	$("form#formGest").validetta({
 			showErrorMessages : true,
 			display : 'bubble',
 			bubblePosition: 'bottom',
@@ -9,15 +9,15 @@ $(document).ready(function() {
   			realTime : true,
   			onValid : function(e){
 	  			e.preventDefault();
-	  			var obj=$("form#formFA").serializeToJSON({
+	  			var obj=$("form#formGest").serializeToJSON({
 	  				associativeArrays: true,
 				});
 				var jsonString = JSON.stringify(obj);
-
-		        if ($("form#formFA").find('option[disabled]:selected').length == 0) {
+				alert(jsonString);
+		        if ($("form#formGest").find('option[disabled]:selected').length == 0) {
 		        	$.ajax({
 			            method:"post",
-			            url:"php/formacion.php",
+			            url:"php/gestion.php",
 			            data: jsonString,
 			            cache:false,
 			            success:function(resp){
@@ -65,7 +65,7 @@ $(document).ready(function() {
 		        	$.alert({
 			            title: 'Espere',
 			            type: 'orange',
-			            content: 'No olvide seleccionar una opci&oacute;n en los campos Nivel, País y Año de Obtenci&oacute;n',
+			            content: 'No olvide seleccionar una opci&oacute;n en los campos Mes y Año',
 			            icon: 'fas fa-globe',
 			            theme: 'material',
 			            useBootstrap: false,

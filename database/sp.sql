@@ -283,7 +283,13 @@ begin
 end**
 delimiter ;
 
-
+drop procedure if exists sp_obtenerCorreos;
+delimiter **
+create procedure sp_obtenerCorreos()
+begin
+	select email from datos;
+end**
+delimiter ;
 
 
 
