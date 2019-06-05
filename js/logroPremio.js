@@ -58,6 +58,8 @@ $(document).ready(
 				clon.find("i.fa-plus").attr("id", "moreLogro");
 			}
 
+			clon.find(".counter").characterCounter();
+
 			clon.appendTo("#baseLogro").show();
 		}
 
@@ -77,6 +79,8 @@ $(document).ready(
 			} else {
 				clon.find("i.fa-plus").attr("id", "morePremio");
 			}
+
+			clon.find(".counter").characterCounter();
 
 			clon.appendTo("#basePremio").show();
 		}

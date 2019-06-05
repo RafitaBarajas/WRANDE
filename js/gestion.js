@@ -57,6 +57,7 @@ $(document).ready(
 			}
 
 			clon.find("select").addClass("newSelect");
+			clon.find(".counter").characterCounter();
 
 			clon.appendTo("#baseGest").show();
 

@@ -47,6 +47,8 @@ $(document).ready(
 				clon.find("i.fa-plus").attr("id", "moreMemb");
 			}
 
+			clon.find(".counter").characterCounter();
+
 			clon.appendTo("#baseMemb").show();
 		}
 

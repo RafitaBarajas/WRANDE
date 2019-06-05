@@ -39,6 +39,8 @@ $(document).ready(
 				clon.find("i.fa-plus").attr("id", "moreProd");
 			}
 
+			clon.find(".counter").characterCounter();
+
 			clon.appendTo("#baseProd").show();
 		}
 

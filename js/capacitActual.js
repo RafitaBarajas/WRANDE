@@ -74,6 +74,7 @@ $(document).ready(
 			}
 
 			clon.find("select").addClass("newSelect");
+			clon.find(".counter").characterCounter();
 
 			clon.appendTo("#baseCapacit").show();
 
@@ -114,6 +115,7 @@ $(document).ready(
 			}
 
 			clon.find("select").addClass("newSelect");
+			clon.find(".counter").characterCounter();
 
 			clon.appendTo("#baseAct").show();
 
