@@ -165,14 +165,14 @@ delimiter ;
 
 drop procedure if exists sp_GestAExpP;
 delimiter **
-create procedure sp_GestAExpP(in ge nvarchar(1), in act nvarchar(30), in inst nvarchar(40), in dd date, in ad date, in mail nvarchar(40))
+create procedure sp_GestAExpP(in ge nvarchar(1), in act nvarchar(30), in inst nvarchar(40), in dMes nvarchar(15), in dAnio nvarchar(4),in aM nvarchar(15), in aAn nvarchar(4), in mail nvarchar(40))
 begin
 	declare msj nvarchar(60); 
     declare id int;
     declare exs int;
     
 	set id =(select ifnull(max(idga),0) + 1 from GestAExpP);
-	insert into GestAExpP values(id,(select idprof from datos where email = mail),ge,act,inst,dd,ad);
+	insert into GestAExpP values(id,(select idprof from datos where email = mail),ge,act,inst,dMes,dAnio,aM, aAn);
 	set msj='Registrado';
     select msj as MSJ;
 end**

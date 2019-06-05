@@ -54,8 +54,10 @@ create table GestAExpP
     goe nvarchar(1) not null,
     actividad nvarchar(30) not null,   
     institucion nvarchar(40) not null,
-    de date not null,
-    a date not null,
+    deMes nvarchar(15) not null,
+    deAnio nvarchar(4) not null,
+    aMes nvarchar(15) not null,
+    aAnio nvarchar(4) not null,
     foreign key(idprof) references Datos(idprof) on delete cascade on update cascade
 );
 

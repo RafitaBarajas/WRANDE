@@ -18,7 +18,7 @@ $(document).ready(function() {
 		        	$.ajax({
 			            method:"post",
 			            url:"php/gestion.php",
-			            data: jsonString,
+			            data: {string:jsonString},
 			            cache:false,
 			            success:function(resp){
 			                var Jresp=$.parseJSON(resp);
