@@ -254,7 +254,7 @@ begin
     declare exs int;
     
 	set id =(select ifnull(max(iddi),0) + 1 from DatosInst);
-	insert into DatosInst values(id,(select idprof from datos where email = mail),cc,tc,fc,ins,fins,idl15,hrsl15,idp15,hrsp15,tip15,idl16,hrsl16,idp16,hrsp16,tip16);
+	insert into DatosInst values(id,(select idprof from datos where email = mail),cc,tc,(STR_TO_DATE(REPLACE(fc,'/','.') ,GET_FORMAT(date,'EUR'))),ins,(STR_TO_DATE(REPLACE(fins,'/','.') ,GET_FORMAT(date,'EUR'))),idl15,hrsl15,idp15,hrsp15,tip15,idl16,hrsl16,idp16,hrsp16,tip16);
 	set msj='Registrado';
     select msj as MSJ;
 end**
