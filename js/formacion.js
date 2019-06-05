@@ -3,18 +3,6 @@ $(document).ready(
 
 		var n = 0;
 
-		$("#formFA").validetta({
-			showErrorMessages : true,
-			display : 'bubble',
-			bubblePosition: 'bottom',
-  			bubbleGapLeft: 40,
-  			bubbleGapTop: 5,
-  			realTime : true,
-  			onValid : function(){
-
-  			}
-		});
-
 		newFA();
 		$("#rowFA").hide();
 

@@ -20,6 +20,7 @@
 
 	<link href="libs/validetta/validetta.css" rel="stylesheet" type="text/css" media="screen" >
 
+	<script type="text/javascript" src="libs/serial/jquery.serializeToJSON.js"></script>
 	<script type="text/javascript" src="libs/validetta/validetta.js"></script>
 	<script src="libs/validetta/validetta-es.js" type="text/javascript"></script>
 
@@ -37,8 +38,12 @@
 
 	<script type="text/javascript" src="js/principal.js"></script>
 	<script type="text/javascript" src="js/formacion.js"></script>
+	<script type="text/javascript" src="js/formacionA.js"></script>
+	<script type="text/javascript" src="js/capacitacionA.js"></script>
 	<script type="text/javascript" src="js/capacitActual.js"></script>
 	<script type="text/javascript" src="js/gestion.js"></script>
+	<script type="text/javascript" src="js/gestionA.js"></script>
+	<script type="text/javascript" src="js/actualizaA.js"></script>
 	<script type="text/javascript" src="js/productos.js"></script>
 	<script type="text/javascript" src="js/experiencia.js"></script>
 	<script type="text/javascript" src="js/logroPremio.js"></script>
@@ -46,6 +51,17 @@
 	<script type="text/javascript" src="js/participacion.js"></script>
 	<script type="text/javascript" src="js/datosInstitucionales.js"></script>
 	<script type="text/javascript" src="js/nvBar.js"></script>
+
+
+	<script type="text/javascript" src="js/verificaSesionA.js"></script>
+
+	<link rel="shortcut icon" type="image/x-icon" href="images/logo_icon.png" />
+	<link href="libs/jquery-confirm/css/jquery-confirm.css" rel="stylesheet">
+	<script src="libs/jquery-confirm/js/jquery-confirm.js"></script>
+	<link href="css/confirm.css" rel="stylesheet">
+	
+	<script type="text/javascript" src="js/verificaSesionA.js"></script>
+
 
 </head>
 
@@ -72,13 +88,13 @@
 
 		      	  <ul class="sidenav" id="sidenav-bars">
 		      	  	
-			      	<li><a class = "blue-text"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Perfil</a></li>
-		      		<li><a href="#" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesión</a></li>
+			      	<li><a href="perfil.html" class = "blue-text"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Perfil</a></li>
+		      		<li><a href="php/cerrarSesion.php" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesión</a></li>
 		      	  </ul>
 
 		      	  <ul class="sidenav" id="sidenav-user">
-			      	<li><a class = "blue-text" id="btn-verPerfil-s"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Perfil</a></li>
-		      		<li><a href="#" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesión</a></li>
+			      	<li><a href="perfil.html" class = "blue-text" id="btn-verPerfil-s"><i class="fas nav-fas fa-user-circle blue-text"></i>Ver Perfil</a></li>
+		      		<li><a href="php/cerrarSesion.php" class="waves-effect waves-light btn cerrar-ses">Cerrar Sesión</a></li>
 		      	  </ul>
 			    </div>
 			</nav>
@@ -482,7 +498,7 @@
 
 		                        </div>
 
-		                    <form action="?acc=1" method="POST" id="formFA">
+		                    <form autocomplete="off" id="formFA">
 		                    	<div class="row center-align" id="baseFA">
 		                    	</div>
 
@@ -838,7 +854,7 @@
 
 		                    </div>
 
-		                    <form action="?acc=1" method="POST" id="formCapacit">
+		                    <form autocomplete="off" id="formCapacit">
 		                    	<div class="row center-align" id="baseCapacit">
 		                    	</div>
 
@@ -1191,7 +1207,7 @@
 
 		                    </div>
 
-		                    <form action="?acc=1" method="POST" id="formAct">
+		                    <form autocomplete="off" id="formAct">
 		                    	<div class="row center-align" id="baseAct">
 		                    	</div>
 
@@ -1413,7 +1429,7 @@
 
 		                    </div>
 
-		                    <form action="?acc=1" method="POST" id="formGest">
+		                    <form autocomplete="off" id="formGest">
 		                    	<div class="row center-align" id="baseGest">
 		                    	</div>
 
