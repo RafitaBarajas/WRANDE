@@ -4,6 +4,7 @@ $(document).ready(function(e){
             method:"post",
             url:"php/obtenerDatos.php",
             success:function(resp){
+                alert(resp);
                 var Jresp=$.parseJSON(resp);
 
                 $("#nombre").val(Jresp["nombre"]);
