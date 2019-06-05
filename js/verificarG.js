@@ -1,14 +1,14 @@
 $(document).ready(function(){
         $.ajax({
             method:"post",
-            url:"php/verificarFAcademica.php",
+            url:"php/verificarG.php",
             data: "",
             cache:false,
             success:function(resp){
                 if (resp == 1) {
-                    $('#formFA').find('input, textarea, button, select').attr('disabled','disabled');
-                    $('#formFA').find('.fa-plus').hide();
-                    $('#formFA').find('.fa-minus').hide();
+                    $('#formGest').find('input, textarea, button, select').attr('disabled','disabled');
+                                        $('#formGest').find('.fa-plus').hide();
+                                        $('#formGest').find('.fa-minus').hide();
                 }
             },
             error:function(){

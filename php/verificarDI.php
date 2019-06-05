@@ -6,7 +6,7 @@
 
 	    $mail = trim($_SESSION["emailsesion"]);
 
-	    $sql = "call sp_verificarFAcademica('$mail')";
+	    $sql = "call sp_verificarDI('$mail')";
 	    $respuesta = mysqli_query($conexion,$sql);
 	    $msj = "";
 
