@@ -1,8 +1,9 @@
 <?php
+    session_start();
     $conexion = mysqli_connect("localhost","root","","cero");
     mysqli_query($conexion, "SET NAMES 'utf8'"); 
 
-    $mail = "d@d.d";//CAMBIAR POR SESSION
+    $mail = $_SESSION["emailsesion"];
 
     $sql = "call sp_obtenerDatos('$mail')";
     $respuesta = mysqli_query($conexion,$sql);
