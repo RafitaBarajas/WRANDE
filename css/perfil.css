@@ -1,0 +1,46 @@
+.dats h4{
+  color: #00adb5;
+  padding-left: 50%;
+}
+
+.dats1 h4{
+  padding-left: 15%;
+}
+
+.boton
+{
+	margin-left: 50px;
+	margin-top: 10%;
+}
+
+
+.btn-floating:hover {
+  background-color: #0dd4dd;
+}
+.btn-floating:active{
+  background-color: #0dd4dd;
+}
+.btn-floating:focus{
+  background-color: #0dd4dd;
+}
+
+.btn-large:hover {
+  background-color: #0dd4dd;
+}
+.btn-large:active{
+  background-color: #0dd4dd;
+}
+.btn-large:focus{
+  background-color: #0dd4dd;
+}
+
+.flotante
+{
+	padding-top: 1%;
+	padding-left: 10%;
+}
+
+.izq
+{
+	padding-left: 10%;
+}
