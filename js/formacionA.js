@@ -9,12 +9,16 @@ $(document).ready(function() {
   			realTime : true,
   			onValid : function(e){
 	  			e.preventDefault();
-	  			alert($("form#formFA").serialize());
+	  			var obj=$("form#formFA").serializeToJSON({
+	  				associativeArrays: true,
+				});
+				var jsonString = JSON.stringify(obj);
+
 		        if ($("form#formFA").find('option[disabled]:selected').length == 0) {
 		        	$.ajax({
 			            method:"post",
-			            url:"php/formacionA.php",
-			            data: $("form#formFA").serialize(),
+			            url:"php/formacion.php",
+			            data: jsonString,
 			            cache:false,
 			            success:function(resp){
 			                var Jresp=$.parseJSON(resp);
@@ -37,27 +41,7 @@ $(document).ready(function() {
 			                        	$(location).attr('href',"principal.html");
 	    							}
 			                    });
-			                }
-			                else if(Jresp["estado"]=="2"){
-			                	$.alert({
-			                        title: 'Error',
-			                        type: 'orange',
-			                        content: 'El correo ya está registrado',
-			                        icon: 'fas fa-globe',
-			                        theme: 'material',
-			                        useBootstrap: false,
-			                        boxWidth: '400px',
-			                        buttons: {
-			                            Ok:{
-			                                text: 'Ok',
-			                                btnClass: 'btn-red',
-			                            },
-			                        },
-			                        onDestroy: function () {
-			                        	$("#email").focus();
-	    							}
-			                    });
-			                }
+			                }  
 			            },
 			            error:function(){
 			                $.alert({
